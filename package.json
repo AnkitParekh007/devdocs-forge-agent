@@ -1,0 +1,66 @@
+{
+  "name": "devdocs-forge-agent",
+  "version": "0.1.0",
+  "description": "AI documentation agent that turns tutorial transcripts, demos, and recordings into developer docs",
+  "type": "module",
+  "bin": {
+    "devdocs-forge-agent": "./dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli/index.ts",
+    "devdocs-forge-agent": "tsx src/cli/index.ts",
+    "doctor": "tsx src/cli/index.ts doctor",
+    "init": "tsx src/cli/index.ts init",
+    "examples": "tsx src/cli/index.ts examples",
+    "generate": "tsx src/cli/index.ts generate",
+    "batch": "tsx src/cli/index.ts batch",
+    "providers": "tsx src/cli/index.ts providers",
+    "verify": "tsx src/cli/index.ts verify",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "js-yaml": "^4.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.14.0",
+    "eslint": "^9.5.0",
+    "prettier": "^3.3.2",
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "documentation",
+    "ai",
+    "markdown",
+    "docusaurus",
+    "gitbook",
+    "openai",
+    "anthropic",
+    "gemini",
+    "developer-tools",
+    "cli",
+    "transcript",
+    "tutorial"
+  ],
+  "author": "devdocs-forge-agent contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/devdocs-forge-agent.git"
+  },
+  "homepage": "https://github.com/your-username/devdocs-forge-agent#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/devdocs-forge-agent/issues"
+  }
+}

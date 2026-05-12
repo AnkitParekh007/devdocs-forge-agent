@@ -1,0 +1,23 @@
+name: Documentation Issue
+description: Report missing, incorrect, or unclear documentation
+labels: ["documentation"]
+body:
+  - type: textarea
+    id: location
+    attributes:
+      label: Which documentation has the issue?
+      placeholder: "docs/PROVIDERS.md — the Gemini setup section is missing the model list"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong or missing?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested improvement (optional)

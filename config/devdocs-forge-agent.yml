@@ -1,0 +1,40 @@
+# ============================================================
+# devdocs-forge-agent — Project Configuration
+# ============================================================
+# Copy this file to config/devdocs-forge-agent.yml
+# Customize for your project. This file is safe to commit.
+# Do NOT put API keys here — use .env instead.
+# ============================================================
+
+project:
+  name: "My Docs Project"
+  default_output_type: "docusaurus"
+  output_dir: "output"
+  input_dir: "input"
+
+model:
+  provider: "mock"
+  temperature: 0.3
+  max_tokens: 6000
+
+writing:
+  audience: "intermediate developers"
+  tone: "clear, practical, friendly"
+  style: "developer documentation"
+  include_summary: true
+  include_faq: true
+  include_troubleshooting: true
+  include_code_explanations: true
+  include_review_checklist: true
+
+docusaurus:
+  sidebar_position: 1
+  tags:
+    - tutorial
+    - documentation
+
+safety:
+  require_permission_notice: true
+  require_human_review: true
+  avoid_plagiarism: true
+  include_source_attribution: true

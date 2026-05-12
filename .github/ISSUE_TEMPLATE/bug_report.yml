@@ -1,0 +1,66 @@
+name: Bug Report
+description: Report a bug in devdocs-forge-agent
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please fill in the details below.
+        Run `npm run doctor` and paste the output — it helps diagnose most issues.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug.
+      placeholder: When I run `npm run generate ...`, it crashes with...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Exact commands you ran.
+      placeholder: |
+        1. Run `npm run generate -- --file input/test.md --type docusaurus`
+        2. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: doctor
+    attributes:
+      label: Doctor output
+      description: Paste the output of `npm run doctor`
+      render: text
+    validations:
+      required: false
+
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      placeholder: v20.11.0
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: macOS 14 / Ubuntu 22.04 / Windows 11
+    validations:
+      required: true
+
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Provider
+      options:
+        - mock
+        - openai
+        - anthropic
+        - gemini
+    validations:
+      required: true

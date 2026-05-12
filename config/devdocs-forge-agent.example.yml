@@ -1,0 +1,82 @@
+# ============================================================
+# devdocs-forge-agent — Project Configuration
+# ============================================================
+# Copy this file to config/devdocs-forge-agent.yml
+# Customize for your project. This file is safe to commit.
+# Do NOT put API keys here — use .env instead.
+# ============================================================
+
+project:
+  name: "My Docs Project"
+  default_output_type: "docusaurus"
+  output_dir: "output"
+  input_dir: "input"
+
+model:
+  provider: "mock"
+  temperature: 0.3
+  max_tokens: 6000
+
+writing:
+  audience: "intermediate developers"
+  tone: "clear, practical, friendly"
+  style: "developer documentation"
+  include_summary: true
+  include_faq: true
+  include_troubleshooting: true
+  include_code_explanations: true
+  include_review_checklist: true
+
+docusaurus:
+  sidebar_position: 1
+  tags:
+    - tutorial
+    - documentation
+
+safety:
+  require_permission_notice: true
+  require_human_review: true
+  avoid_plagiarism: true
+  include_source_attribution: true
+
+video_intake:
+  enabled: true
+  # Set to true to allow generation without a transcript (not recommended)
+  allow_url_only_generation: false
+  # Require a user-provided transcript file — devdocs-forge-agent never scrapes transcripts
+  require_transcript: true
+  allow_force_for_low_confidence: true
+  # Minimum score (0–100) for a video to be classified as technical
+  min_tech_confidence_score: 60
+  # Minimum word count for a transcript to be considered valid
+  min_transcript_words: 150
+  allowed_domains:
+    - youtube.com
+    - youtu.be
+    - vimeo.com
+  preferred_categories:
+    - Education
+    - Science & Technology
+    - Howto & Style
+  technical_keywords:
+    - angular
+    - react
+    - vue
+    - typescript
+    - javascript
+    - python
+    - docker
+    - kubernetes
+    - tutorial
+    - programming
+    - coding
+    - api
+    - devops
+  blocked_keywords:
+    - song
+    - music
+    - trailer
+    - prank
+    - vlog
+    - reaction
+    - gaming
