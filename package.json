@@ -17,6 +17,7 @@
     "batch": "tsx src/cli/index.ts batch",
     "providers": "tsx src/cli/index.ts providers",
     "verify": "tsx src/cli/index.ts verify",
+    "demo": "node scripts/demo.mjs",
     "test": "vitest run",
     "lint": "eslint .",
     "format": "prettier --write ."
@@ -57,10 +58,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/devdocs-forge-agent.git"
+    "url": "https://github.com/AnkitParekh007/devdocs-forge-agent.git"
   },
-  "homepage": "https://github.com/your-username/devdocs-forge-agent#readme",
+  "homepage": "https://github.com/AnkitParekh007/devdocs-forge-agent#readme",
   "bugs": {
-    "url": "https://github.com/your-username/devdocs-forge-agent/issues"
+    "url": "https://github.com/AnkitParekh007/devdocs-forge-agent/issues"
   }
 }

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" width="820" height="440">
+  <defs>
+    <style>
+      .term-text { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 13px; }
+      .ok { fill: #3fb950; }
+      .warn { fill: #d29922; }
+      .fail { fill: #f85149; }
+      .info { fill: #58a6ff; }
+      .dim { fill: #6e7681; }
+      .cmd { fill: #e6edf3; }
+      .section { fill: #e6edf3; font-weight: bold; }
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; fill: #6e7681; }
+      .heading { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; fill: #e6edf3; font-weight: 600; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="440" fill="#0d1117" rx="10"/>
+
+  <!-- Title bar -->
+  <rect width="820" height="36" fill="#161b22" rx="10"/>
+  <rect width="820" height="18" y="18" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="18" r="6" fill="#28c840"/>
+  <text x="410" y="23" font-family="-apple-system, sans-serif" font-size="13px" fill="#8b949e" text-anchor="middle">Video Intake Guard — validate-source</text>
+
+  <!-- Column 1: validate-source output (with API key) -->
+  <text x="20" y="64" class="term-text section">$ npm run devdocs-forge-agent -- validate-source \</text>
+  <text x="20" y="80" class="term-text dim">      --url "https://youtube.com/watch?v=..." --file input/transcript.md</text>
+
+  <text x="20" y="108" class="term-text section">devdocs-forge-agent validate-source</text>
+
+  <!-- URL check -->
+  <text x="20" y="132" class="term-text ok">  OK</text>
+  <text x="64" y="132" class="term-text cmd">  URL is valid (youtube)</text>
+  <text x="300" y="132" class="term-text dim">  youtube.com/watch?v=ABC123</text>
+
+  <!-- Classification (high confidence) -->
+  <text x="20" y="152" class="term-text ok">  OK</text>
+  <text x="64" y="152" class="term-text cmd">  Tech classification: 75/100</text>
+  <text x="340" y="152" class="term-text dim">  high confidence — tutorial</text>
+
+  <!-- Transcript -->
+  <text x="20" y="172" class="term-text ok">  OK</text>
+  <text x="64" y="172" class="term-text cmd">  Transcript: input/transcript.md</text>
+  <text x="360" y="172" class="term-text dim">  842 words</text>
+
+  <!-- No scraping notice -->
+  <rect x="20" y="190" width="400" height="28" fill="#1a2e1a" rx="4"/>
+  <text x="30" y="208" class="term-text ok">  NO SCRAPING</text>
+  <text x="140" y="208" class="term-text dim">  transcript must be provided by you</text>
+
+  <!-- Success -->
+  <text x="20" y="238" class="term-text" fill="#3fb950" font-weight="bold">  ✓ Source is valid. Ready to generate.</text>
+  <text x="20" y="256" class="term-text dim">  Run: npm run generate -- --url "..." --file "..." --type docusaurus</text>
+
+  <!-- Divider -->
+  <line x1="20" y1="278" x2="800" y2="278" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Column 2: low confidence example -->
+  <text x="20" y="304" class="term-text section">$ npm run devdocs-forge-agent -- inspect-url "https://youtube.com/watch?v=..."</text>
+
+  <text x="20" y="328" class="term-text ok">  OK</text>
+  <text x="64" y="328" class="term-text cmd">  Platform: youtube · Video ID: ABC123</text>
+
+  <!-- Classification grid -->
+  <text x="20" y="352" class="term-text warn">  WARN</text>
+  <text x="72" y="352" class="term-text cmd">  Score: 28/100</text>
+  <text x="220" y="352" class="term-text dim">  low confidence — may not be technical</text>
+
+  <text x="20" y="370" class="term-text dim">    - Negative signal: title contains "vlog" (-30)</text>
+  <text x="20" y="388" class="term-text dim">    + Positive signal: duration > 3 minutes (+10)</text>
+  <text x="20" y="406" class="term-text dim">    + Positive signal: description mentions "tutorial" (+20)</text>
+
+  <text x="20" y="426" class="term-text dim">  Use --force to bypass if you own this content.</text>
+</svg>

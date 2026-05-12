@@ -19,6 +19,8 @@ Want to work on something? Open an issue!
 | Markdown validation | ✅ Done |
 | Test suite (Vitest) | ✅ Done |
 | Example transcripts and outputs | ✅ Done |
+| Video Intake Guard (URL validation + tech classification) | ✅ Done |
+| One-command demo (`npm run demo`) | ✅ Done |
 
 ---
 

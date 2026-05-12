@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 500" width="820" height="500">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .card { fill: #161b22; }
+      .border { fill: none; stroke: #30363d; stroke-width: 1; }
+      .h1 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 20px; fill: #e6edf3; font-weight: 700; }
+      .h2 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; fill: #e6edf3; font-weight: 600; }
+      .body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; fill: #8b949e; }
+      .code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; fill: #7ee787; }
+      .code-bg { fill: #0d1117; }
+      .tag { fill: #1f6feb; }
+      .tag-text { font-family: monospace; font-size: 11px; fill: #58a6ff; }
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; fill: #6e7681; }
+      .toc-link { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; fill: #58a6ff; }
+      .check-ok { fill: #3fb950; }
+      .frontmatter { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; fill: #d29922; }
+      .fm-val { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; fill: #a5f3fc; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="820" height="500" fill="#0d1117" rx="10"/>
+
+  <!-- Title bar -->
+  <rect width="820" height="36" fill="#161b22" rx="10"/>
+  <rect width="820" height="18" y="18" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="18" r="6" fill="#28c840"/>
+  <text x="410" y="23" font-family="-apple-system, sans-serif" font-size="13px" fill="#8b949e" text-anchor="middle">output/angular-signals-reactive-state-2026-05-12/index.md</text>
+
+  <!-- Generated content area -->
+  <rect x="20" y="46" width="480" height="440" fill="#161b22" rx="8"/>
+  <rect x="20" y="46" width="480" height="440" class="border" rx="8"/>
+
+  <!-- Frontmatter block -->
+  <rect x="30" y="56" width="460" height="110" fill="#0d1117" rx="4"/>
+  <text x="40" y="74" class="frontmatter">---</text>
+  <text x="40" y="90" class="frontmatter">id: </text><text x="68" y="90" class="fm-val">angular-signals-reactive-state</text>
+  <text x="40" y="106" class="frontmatter">title: </text><text x="84" y="106" class="fm-val">"Angular Signals: Reactive State"</text>
+  <text x="40" y="122" class="frontmatter">sidebar_position: </text><text x="172" y="122" class="fm-val">1</text>
+  <text x="40" y="138" class="frontmatter">tags: </text><text x="84" y="138" class="fm-val">[tutorial, angular, documentation]</text>
+  <text x="40" y="154" class="frontmatter">---</text>
+
+  <!-- H1 -->
+  <text x="30" y="186" class="h1">Angular Signals: Reactive State Without the Complexity</text>
+
+  <!-- Summary para -->
+  <text x="30" y="210" class="body">Angular 17 introduced Signals as a stable reactive primitive that simplifies</text>
+  <text x="30" y="226" class="body">change detection and makes your components more predictable...</text>
+
+  <!-- TOC section -->
+  <text x="30" y="258" class="h2">Table of Contents</text>
+  <text x="40" y="278" class="toc-link">1. Prerequisites</text>
+  <text x="40" y="296" class="toc-link">2. What Is a Signal?</text>
+  <text x="40" y="314" class="toc-link">3. Creating Your First Signal</text>
+  <text x="40" y="332" class="toc-link">4. Computed Signals</text>
+  <text x="40" y="350" class="toc-link">5. Effects and Side Effects</text>
+  <text x="40" y="368" class="toc-link">6. Code Example: Counter Component</text>
+
+  <!-- Code block preview -->
+  <rect x="30" y="386" width="460" height="60" fill="#0d1117" rx="4"/>
+  <text x="40" y="406" class="code">const count = signal(0);</text>
+  <text x="40" y="422" class="code">const doubled = computed(() => count() * 2);</text>
+  <text x="40" y="438" class="code">effect(() => console.log('Count:', count()));</text>
+
+  <!-- Review checklist line -->
+  <text x="30" y="474" class="check-ok">✓</text>
+  <text x="50" y="474" class="body">review-checklist.md generated — verify before publishing</text>
+
+  <!-- Sidebar -->
+  <rect x="520" y="46" width="280" height="440" fill="#161b22" rx="8"/>
+  <rect x="520" y="46" width="280" height="440" class="border" rx="8"/>
+
+  <text x="534" y="76" class="label">OUTPUT TYPE</text>
+  <rect x="534" y="84" width="80" height="22" fill="#1f3a5f" rx="4"/>
+  <text x="574" y="99" class="tag-text" text-anchor="middle">docusaurus</text>
+
+  <text x="534" y="130" class="label">PROVIDER</text>
+  <text x="534" y="148" class="body">mock (no API key needed)</text>
+
+  <text x="534" y="174" class="label">MODEL</text>
+  <text x="534" y="192" class="body">mock-v1</text>
+
+  <text x="534" y="218" class="label">FILES GENERATED</text>
+  <text x="534" y="238" class="code" fill="#7ee787">✓</text>
+  <text x="552" y="238" class="body">index.md</text>
+  <text x="534" y="256" class="code" fill="#7ee787">✓</text>
+  <text x="552" y="256" class="body">metadata.json</text>
+  <text x="534" y="274" class="code" fill="#7ee787">✓</text>
+  <text x="552" y="274" class="body">review-checklist.md</text>
+  <text x="534" y="292" class="code" fill="#7ee787">✓</text>
+  <text x="552" y="292" class="body">source-summary.md</text>
+  <text x="534" y="310" class="code" fill="#7ee787">✓</text>
+  <text x="552" y="310" class="body">docs/angular-signals-*.md</text>
+
+  <text x="534" y="346" class="label">WORD COUNT</text>
+  <text x="534" y="364" class="body">~1,200 words generated</text>
+
+  <text x="534" y="400" class="label">NEXT STEP</text>
+  <text x="534" y="420" class="body">Open review-checklist.md</text>
+  <text x="534" y="438" class="body">and verify output before</text>
+  <text x="534" y="456" class="body">publishing to Docusaurus.</text>
+</svg>

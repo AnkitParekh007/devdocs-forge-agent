@@ -38,3 +38,54 @@ safety:
   require_human_review: true
   avoid_plagiarism: true
   include_source_attribution: true
+
+video_intake:
+  enabled: true
+  # devdocs-forge-agent never scrapes transcripts — you must always provide --file
+  allow_url_only_generation: false
+  require_transcript: true
+  allow_force_for_low_confidence: true
+  min_tech_confidence_score: 60
+  min_transcript_words: 150
+  allowed_domains:
+    - youtube.com
+    - youtu.be
+    - vimeo.com
+  preferred_categories:
+    - Education
+    - Science & Technology
+    - Howto & Style
+  technical_keywords:
+    - angular
+    - react
+    - vue
+    - svelte
+    - javascript
+    - typescript
+    - node
+    - nestjs
+    - python
+    - java
+    - docker
+    - kubernetes
+    - api
+    - database
+    - ai agent
+    - rag
+    - mcp
+    - tutorial
+    - course
+    - coding
+    - walkthrough
+    - build
+  blocked_keywords:
+    - song
+    - music
+    - movie
+    - trailer
+    - prank
+    - vlog
+    - reaction
+    - sports
+    - comedy
+    - gameplay

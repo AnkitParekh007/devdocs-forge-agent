@@ -7,7 +7,7 @@ Thank you for your interest in contributing! This guide will get you set up in a
 ## Setup
 
 ```bash
-git clone https://github.com/your-username/devdocs-forge-agent.git
+git clone https://github.com/AnkitParekh007/devdocs-forge-agent.git
 cd devdocs-forge-agent
 npm install
 cp .env.example .env
@@ -134,4 +134,4 @@ All docs live in `docs/`. They're plain Markdown — edit and submit a PR.
 
 ## Questions?
 
-Open a [GitHub Discussion](https://github.com/your-username/devdocs-forge-agent/discussions) or check [SUPPORT.md](SUPPORT.md).
+Open a [GitHub Discussion](https://github.com/AnkitParekh007/devdocs-forge-agent/discussions) or check [SUPPORT.md](SUPPORT.md).

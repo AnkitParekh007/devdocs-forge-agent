@@ -5,7 +5,7 @@ This is a detailed guide for contributors. For a quick overview, see [CONTRIBUTI
 ## Development Environment
 
 ```bash
-git clone https://github.com/your-username/devdocs-forge-agent.git
+git clone https://github.com/AnkitParekh007/devdocs-forge-agent.git
 cd devdocs-forge-agent
 npm install
 cp .env.example .env

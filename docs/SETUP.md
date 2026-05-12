@@ -15,7 +15,7 @@ node --version  # Should output v18.x.x or higher
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/devdocs-forge-agent.git
+git clone https://github.com/AnkitParekh007/devdocs-forge-agent.git
 cd devdocs-forge-agent
 npm install
 ```

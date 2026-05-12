@@ -17,9 +17,9 @@ This catches 90% of setup issues.
 - [docs/SAFETY.md](docs/SAFETY.md) — responsible use
 
 **GitHub Issues:**
-- Search [existing issues](https://github.com/your-username/devdocs-forge-agent/issues) first
-- Open a [bug report](https://github.com/your-username/devdocs-forge-agent/issues/new?template=bug_report.yml) for bugs
-- Open a [feature request](https://github.com/your-username/devdocs-forge-agent/issues/new?template=feature_request.yml) for ideas
+- Search [existing issues](https://github.com/AnkitParekh007/devdocs-forge-agent/issues) first
+- Open a [bug report](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/new?template=bug_report.yml) for bugs
+- Open a [feature request](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/new?template=feature_request.yml) for ideas
 
 ## What to Include in a Bug Report
 

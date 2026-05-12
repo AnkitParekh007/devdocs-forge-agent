@@ -6,28 +6,63 @@
 
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://typescriptlang.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 [![OpenAI](https://img.shields.io/badge/OpenAI-supported-412991)](https://platform.openai.com)
 [![Anthropic](https://img.shields.io/badge/Anthropic-supported-D97757)](https://anthropic.com)
 [![Gemini](https://img.shields.io/badge/Gemini-supported-4285F4)](https://aistudio.google.com)
 [![Markdown](https://img.shields.io/badge/output-Markdown-lightgrey)](https://commonmark.org)
 [![Docusaurus](https://img.shields.io/badge/Docusaurus-ready-3ECC5F)](https://docusaurus.io)
 [![GitBook](https://img.shields.io/badge/GitBook-ready-3884FF)](https://gitbook.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+[![Local-first](https://img.shields.io/badge/local--first-yes-informational)](#)
 
 <br/>
 
-![devdocs-forge-agent hero](assets/devdocs-forge-agent-hero.png)
+<p align="center">
+  <img src="assets/devdocs-forge-agent-hero.svg" alt="devdocs-forge-agent — local-first AI documentation agent" width="900"/>
+</p>
 
 *Videos are great for learning. Docs are great for shipping.*
-*devdocs-forge-agent turns your tutorials, demos, and lessons into docs developers can actually use.*
+*devdocs-forge-agent converts your tutorial transcripts into structured developer documentation — locally, with your own model key.*
 
 </div>
 
 ---
 
+## Try It in One Command
+
+```bash
+git clone https://github.com/AnkitParekh007/devdocs-forge-agent.git
+cd devdocs-forge-agent
+npm install
+cp .env.example .env
+npm run demo
+```
+
+`npm run demo` runs doctor → copies example transcripts → generates a Docusaurus page from the Angular Signals tutorial → validates the output. No API key required — mock mode works out of the box.
+
+Generated files appear in `output/angular-signals-reactive-state-{date}/`:
+
+```
+output/angular-signals-reactive-state-2026-05-12/
+├── index.md              ← generated documentation
+├── metadata.json         ← provider, model, timestamp, source
+├── review-checklist.md   ← human review tasks before publishing
+└── source-summary.md     ← word count, source URL, slug
+```
+
+---
+
+## Demo
+
+<p align="center">
+  <img src="assets/demo-terminal.svg" alt="npm run demo terminal output" width="820"/>
+</p>
+
+---
+
 ## What Is This?
 
-**devdocs-forge-agent** is a local-first AI documentation agent that converts tutorial transcripts, product demos, and lesson notes into structured developer documentation.
+**devdocs-forge-agent** is a local-first AI documentation agent CLI that converts tutorial transcripts, product demos, and lesson notes into structured developer documentation.
 
 You bring the transcript. devdocs-forge-agent generates:
 
@@ -45,45 +80,67 @@ No YouTube scraping. No video downloading. No account required. Works entirely o
 ## Why Developers Star This
 
 - **Local-first** — runs entirely on your machine, no cloud backend
-- **Bring your own model key** — OpenAI, Anthropic, Gemini, or mock mode
+- **Mock mode** — generates real output with zero API keys for development
+- **Bring your own model key** — OpenAI, Anthropic, Gemini, or Ollama (planned)
 - **Markdown-first outputs** — drop directly into any docs site
-- **Docusaurus/GitBook-ready** — correct frontmatter, admonitions, and structure
+- **Docusaurus/GitBook-ready** — correct frontmatter, admonitions, and structure out of the box
 - **Built for developer tutorials** — understands code walkthroughs, API demos, course lessons
 - **No scraping** — only processes transcripts you own or have permission to use
-- **No lock-in** — fork it, modify it, extend it
-- **Agent-friendly** — full AGENTS.md and CLAUDE.md for AI-assisted workflows
-- **Contributor-friendly** — add a provider, a mode, or examples in minutes
+- **No lock-in** — fork it, modify it, extend it with your own providers and modes
+- **Agent-friendly** — full `AGENTS.md` and `CLAUDE.md` for AI-assisted development workflows
+- **Contributor-friendly** — add a provider or mode in under 50 lines of TypeScript
 
 ---
 
-## What It Generates
+## Perfect For
 
-| Input | Output |
-|-------|--------|
-| Tutorial transcript | Step-by-step developer guide |
-| Product demo transcript | Help docs / onboarding page |
-| Course lesson notes | Lesson page with objectives |
-| Raw learning notes | Developer blog post |
-| Bug walkthrough | Troubleshooting guide |
-| API demo | README tutorial |
-| Webinar transcript | FAQ document |
-| Internal training notes | Internal documentation page |
+| Who | Use case |
+|-----|----------|
+| **Developer YouTubers** | Turn tutorial recordings into Docusaurus sites |
+| **DevRel teams** | Convert demo recordings into onboarding docs |
+| **Course creators** | Generate lesson pages from lecture notes |
+| **Open-source maintainers** | Create READMEs and troubleshooting guides from issue walkthroughs |
+| **Technical bloggers** | Draft dev.to and Hashnode posts from talk notes |
+| **SaaS engineering teams** | Generate internal runbooks from Loom transcripts |
+
+---
+
+## Not Another YouTube Scraper
+
+> devdocs-forge-agent does not scrape YouTube videos, download captions, or access any video platform API for content.
+>
+> The optional `--url` flag is for **attribution** (linking back to the source) and **safety classification** (checking whether the video looks like a technical tutorial). You must always provide your own transcript with `--file`.
+
+---
+
+## Generated Output Preview
+
+<p align="center">
+  <img src="assets/generated-doc-preview.svg" alt="Generated Docusaurus documentation preview" width="820"/>
+</p>
 
 ---
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/your-username/devdocs-forge-agent.git
+git clone https://github.com/AnkitParekh007/devdocs-forge-agent.git
 cd devdocs-forge-agent
 npm install
 cp .env.example .env
-npm run doctor
-npm run examples
-npm run generate -- --file examples/transcripts/angular-signals-tutorial.md --type docusaurus
-```
 
-Your generated documentation lands in `output/`.
+# Check setup (mock mode, no API key needed)
+npm run doctor
+
+# Copy example transcripts into input/
+npm run examples
+
+# Generate a Docusaurus doc from the Angular Signals example
+npm run generate -- --file examples/transcripts/angular-signals-tutorial.md --type docusaurus
+
+# Validate generated output
+npm run verify
+```
 
 ---
 
@@ -122,7 +179,46 @@ See [docs/PROVIDERS.md](docs/PROVIDERS.md) for full provider setup and how to ad
 
 ---
 
-## Usage
+## Video URL Safety
+
+<p align="center">
+  <img src="assets/video-intake-guard.svg" alt="Video Intake Guard — URL validation and tech classification" width="820"/>
+</p>
+
+When you pass `--url` to `generate`, the **Video Intake Guard** runs before generation:
+
+1. **URL validation** — only `youtube.com`, `youtu.be`, and `vimeo.com` are accepted
+2. **Tech video classification** — scores the video's title, description, tags, and category to verify it looks like a technical tutorial (requires `YOUTUBE_API_KEY` for full metadata; degrades gracefully without it)
+3. **Transcript requirement** — you must always provide `--file` with your own transcript
+
+The `video_intake` guard is **enabled by default** in `config/devdocs-forge-agent.yml`. URL-only generation is **blocked by design** (`allow_url_only_generation: false`).
+
+```bash
+# Inspect a video URL (classification only, no transcript needed)
+npm run devdocs-forge-agent -- inspect-url "https://youtube.com/watch?v=..."
+
+# Validate a URL + transcript before generation
+npm run devdocs-forge-agent -- validate-source \
+  --url "https://youtube.com/watch?v=..." \
+  --file input/your-transcript.md
+
+# Generate with URL attribution + intake guard
+npm run generate -- \
+  --url "https://youtube.com/watch?v=..." \
+  --file input/your-transcript.md \
+  --type docusaurus
+
+# Bypass low-confidence classification (only if you own the content)
+npm run generate -- \
+  --url "https://youtube.com/watch?v=..." \
+  --file input/your-transcript.md \
+  --type docusaurus \
+  --force
+```
+
+---
+
+## CLI Commands
 
 ```bash
 # Initialize your project
@@ -132,13 +228,21 @@ npm run init
 npm run doctor
 
 # Generate documentation from a transcript
-npm run generate -- --file input/my-tutorial.md --type docs
 npm run generate -- --file input/my-tutorial.md --type docusaurus
 npm run generate -- --file input/my-tutorial.md --type blog
 npm run generate -- --file input/my-tutorial.md --type faq
 
+# Generate with video URL attribution
+npm run generate -- --url "https://youtube.com/watch?v=..." --file input/my-tutorial.md
+
 # Process all transcripts in a directory
 npm run batch -- --dir input/
+
+# Inspect and classify a video URL
+npm run devdocs-forge-agent -- inspect-url "https://youtube.com/watch?v=..."
+
+# Validate a URL + transcript pair before generation
+npm run devdocs-forge-agent -- validate-source --url "..." --file input/my-transcript.md
 
 # List available providers
 npm run providers
@@ -158,6 +262,9 @@ Transcript / Notes
        ↓
   Source Parser
   (extract title, source URL, content)
+       ↓
+  Video Intake Guard (if --url provided)
+  (URL validate → metadata fetch → tech classify)
        ↓
   Mode Prompt Builder
   (shared rules + user profile + mode template)
@@ -201,11 +308,11 @@ Running on `examples/transcripts/angular-signals-tutorial.md` with `--type docus
 
 ```markdown
 ---
-id: angular-signals-tutorial
+id: angular-signals-reactive-state
 title: "Angular Signals: Reactive State Without the Complexity"
 sidebar_label: "Angular Signals"
 sidebar_position: 1
-description: "Learn how to use Angular Signals..."
+description: "Learn how to use Angular Signals for reactive state..."
 tags:
   - tutorial
   - documentation
@@ -220,8 +327,8 @@ Angular 17 introduced Signals as a stable reactive primitive...
 ...
 
 ## Review Checklist
-- [ ] Facts verified
-- [ ] Code snippets tested
+- [ ] Facts verified against source transcript
+- [ ] Code snippets tested locally
 ```
 
 See full examples in [examples/outputs/](examples/outputs/).
@@ -235,6 +342,7 @@ devdocs-forge-agent/
 ├── src/
 │   ├── cli/              # CLI entry point and commands
 │   ├── config/           # Config schema and loader
+│   ├── intake/           # Video Intake Guard (URL parse, classify, validate)
 │   ├── pipeline/         # Core generation logic
 │   ├── providers/        # AI provider adapters
 │   ├── templates/        # Output templates
@@ -249,7 +357,8 @@ devdocs-forge-agent/
 │   ├── transcripts/      # Example input transcripts
 │   └── outputs/          # Example generated outputs
 ├── docs/                 # Full documentation
-├── tests/                # Vitest test suite
+├── tests/                # Vitest test suite (54 tests)
+├── assets/               # SVG/PNG assets for README
 ├── input/                # Drop your transcripts here
 ├── output/               # Generated docs land here
 ├── config/               # Your project config
@@ -258,53 +367,13 @@ devdocs-forge-agent/
 
 ---
 
-## Video URL Safety
-
-When you pass `--url` to the `generate` command, devdocs-forge-agent runs a **Video Intake Guard** before generation:
-
-1. **URL validation** — checks that the URL is a supported YouTube or Vimeo link
-2. **Tech video classification** — scores the video's metadata (title, description, tags, category) to verify it looks like a technical tutorial
-3. **Transcript check** — confirms you have provided your own transcript file
-
-**devdocs-forge-agent never scrapes YouTube transcripts.** The `--url` flag is for attribution and classification only — you must always supply `--file` with your own transcript.
-
-```bash
-# Inspect a video URL (classification only, no transcript needed)
-npm run devdocs-forge-agent -- inspect-url "https://youtube.com/watch?v=..."
-
-# Validate a URL + transcript before generation
-npm run devdocs-forge-agent -- validate-source \
-  --url "https://youtube.com/watch?v=..." \
-  --file input/your-transcript.md
-
-# Generate with URL attribution and intake guard
-npm run devdocs-forge-agent -- generate \
-  --url "https://youtube.com/watch?v=..." \
-  --file input/your-transcript.md \
-  --type docusaurus
-
-# Bypass low-confidence classification (only if you own the content)
-npm run devdocs-forge-agent -- generate \
-  --url "https://youtube.com/watch?v=..." \
-  --file input/your-transcript.md \
-  --type docusaurus \
-  --force
-```
-
-For richer classification (title, category, tags, duration), add `YOUTUBE_API_KEY` to your `.env`. Without it, classification uses URL heuristics only and may give a low-confidence result. This is a warning, not a failure — use `--force` to proceed if you own the content.
-
----
-
 ## Safety & Responsible Use
-
-**Please read before using:**
 
 - Only process transcripts you **own**, **created**, or have **explicit permission** to use
 - Do not use this tool to plagiarize tutorial creators or course authors
 - Always **review** generated documentation before publishing — AI can hallucinate
 - AI may produce inaccurate code, wrong API names, or invented configuration values
 - Source attribution is strongly recommended when processing others' content
-- Respect the Terms of Service of YouTube, Udemy, Coursera, and other platforms
 - Never scrape or download transcripts from platforms that prohibit it
 
 See [LEGAL_DISCLAIMER.md](LEGAL_DISCLAIMER.md) and [docs/SAFETY.md](docs/SAFETY.md) for full details.
@@ -315,19 +384,19 @@ See [LEGAL_DISCLAIMER.md](LEGAL_DISCLAIMER.md) and [docs/SAFETY.md](docs/SAFETY.
 
 - [x] CLI MVP
 - [x] Provider abstraction (OpenAI, Anthropic, Gemini, mock)
+- [x] 11 documentation output modes
 - [x] Docusaurus output mode
 - [x] GitBook output mode
 - [x] Batch mode
 - [x] Video Intake Guard (URL validation + tech classification + transcript check)
-- [ ] Browser UI (React or Angular)
-- [ ] VS Code extension
 - [ ] Ollama provider (local LLMs)
 - [ ] OpenRouter provider
+- [ ] Browser UI (React or Angular)
+- [ ] VS Code extension
 - [ ] GitHub PR generator from changelogs
 - [ ] Docs website generator (auto-publishes to GitHub Pages)
 - [ ] Transcript chunking for long videos
 - [ ] Diagram generation (Mermaid from architecture sections)
-- [ ] Human review workflow (Git-based approval flow)
 - [ ] Multilingual output support
 
 See [ROADMAP.md](ROADMAP.md) for details and contribution opportunities.
@@ -348,13 +417,13 @@ We welcome all kinds of contributions:
 | **Improve docs** | Edit files in `docs/` |
 | **Build the UI** | Open an issue to discuss approach |
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for full setup instructions.
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/GOOD_FIRST_ISSUES.md](docs/GOOD_FIRST_ISSUES.md) for full setup instructions.
 
 ---
 
 ## Star This Project
 
-If devdocs-forge-agent helps you ship better documentation, please star it — it helps more developers discover it.
+If devdocs-forge-agent helps you ship better documentation, please give it a star — it helps more developers discover it.
 
 ---
 

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" width="900" height="340">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="340" fill="url(#bg)" rx="12"/>
+
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="900" height="4" fill="url(#accent)" rx="0"/>
+
+  <!-- Logo area -->
+  <rect x="60" y="60" width="48" height="48" fill="#3b82f6" rx="10"/>
+  <text x="84" y="91" font-family="monospace" font-size="22" fill="white" text-anchor="middle" font-weight="bold">D</text>
+
+  <!-- Title -->
+  <text x="124" y="84" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" fill="white" font-weight="700">devdocs-forge-agent</text>
+  <text x="124" y="105" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#94a3b8">v0.1.0 · MIT · Local-first AI documentation agent</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="130" x2="840" y2="130" stroke="#334155" stroke-width="1"/>
+
+  <!-- Tagline -->
+  <text x="450" y="168" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="600">Turn tutorial transcripts into developer documentation.</text>
+  <text x="450" y="193" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" fill="#64748b" text-anchor="middle">No scraping · No lock-in · Bring your own model key · Runs on your machine</text>
+
+  <!-- Feature pills -->
+  <!-- Local-first -->
+  <rect x="60" y="220" width="110" height="30" fill="#1e3a5f" rx="6"/>
+  <text x="115" y="240" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">Local-first</text>
+
+  <!-- Mock mode -->
+  <rect x="182" y="220" width="130" height="30" fill="#1e3a5f" rx="6"/>
+  <text x="247" y="240" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">Mock mode (no key)</text>
+
+  <!-- OpenAI -->
+  <rect x="324" y="220" width="90" height="30" fill="#1e3a5f" rx="6"/>
+  <text x="369" y="240" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">OpenAI</text>
+
+  <!-- Anthropic -->
+  <rect x="426" y="220" width="100" height="30" fill="#1e3a5f" rx="6"/>
+  <text x="476" y="240" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">Anthropic</text>
+
+  <!-- Gemini -->
+  <rect x="538" y="220" width="80" height="30" fill="#1e3a5f" rx="6"/>
+  <text x="578" y="240" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">Gemini</text>
+
+  <!-- No scraping -->
+  <rect x="630" y="220" width="110" height="30" fill="#1a2e1a" rx="6"/>
+  <text x="685" y="240" font-family="monospace" font-size="12" fill="#4ade80" text-anchor="middle">No scraping</text>
+
+  <!-- Docusaurus -->
+  <rect x="752" y="220" width="100" height="30" fill="#1e3a5f" rx="6"/>
+  <text x="802" y="240" font-family="monospace" font-size="12" fill="#60a5fa" text-anchor="middle">Docusaurus</text>
+
+  <!-- Bottom command line -->
+  <rect x="60" y="270" width="780" height="40" fill="#0d1a2d" rx="8" stroke="#334155" stroke-width="1"/>
+  <text x="80" y="295" font-family="monospace" font-size="13" fill="#64748b">$</text>
+  <text x="96" y="295" font-family="monospace" font-size="13" fill="#e2e8f0">npm run demo</text>
+  <text x="300" y="295" font-family="monospace" font-size="13" fill="#64748b">  # generate docs from a transcript in mock mode — no API key needed</text>
+</svg>

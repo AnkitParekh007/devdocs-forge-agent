@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 480" width="820" height="480">
+  <defs>
+    <style>
+      .term-bg { fill: #0d1117; }
+      .term-title { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; }
+      .term-text { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 13px; }
+      .prompt { fill: #7ee787; }
+      .cmd { fill: #e6edf3; }
+      .ok { fill: #3fb950; }
+      .warn { fill: #d29922; }
+      .info { fill: #58a6ff; }
+      .dim { fill: #6e7681; }
+      .success { fill: #3fb950; font-weight: bold; }
+      .section { fill: #e6edf3; font-weight: bold; }
+    </style>
+  </defs>
+
+  <!-- Terminal window -->
+  <rect width="820" height="480" fill="#0d1117" rx="10"/>
+
+  <!-- Title bar -->
+  <rect width="820" height="36" fill="#161b22" rx="10"/>
+  <rect width="820" height="18" y="18" fill="#161b22"/>
+  <circle cx="22" cy="18" r="6" fill="#ff5f57"/>
+  <circle cx="42" cy="18" r="6" fill="#febc2e"/>
+  <circle cx="62" cy="18" r="6" fill="#28c840"/>
+  <text x="410" y="23" class="term-title" text-anchor="middle">devdocs-forge-agent — npm run demo</text>
+
+  <!-- Line 1 -->
+  <text x="20" y="62" class="term-text prompt">$</text>
+  <text x="36" y="62" class="term-text cmd">npm run demo</text>
+
+  <!-- doctor output -->
+  <text x="20" y="84" class="term-text section">devdocs-forge-agent doctor</text>
+  <text x="20" y="84" class="term-text dim">                         ─────────────────────────</text>
+
+  <text x="20" y="104" class="term-text ok">  OK</text>
+  <text x="64" y="104" class="term-text cmd">  Node.js v20.11.0</text>
+  <text x="260" y="104" class="term-text dim">  >= 18 required</text>
+
+  <text x="20" y="122" class="term-text ok">  OK</text>
+  <text x="64" y="122" class="term-text cmd">  package.json</text>
+
+  <text x="20" y="140" class="term-text ok">  OK</text>
+  <text x="64" y="140" class="term-text cmd">  config/devdocs-forge-agent.yml</text>
+
+  <text x="20" y="158" class="term-text ok">  OK</text>
+  <text x="64" y="158" class="term-text cmd">  provider: mock</text>
+
+  <text x="20" y="176" class="term-text ok">  OK</text>
+  <text x="64" y="176" class="term-text cmd">  API key</text>
+  <text x="200" y="176" class="term-text dim">  not required in mock mode</text>
+
+  <text x="20" y="194" class="term-text warn">  WARN</text>
+  <text x="72" y="194" class="term-text cmd">  YOUTUBE_API_KEY</text>
+  <text x="272" y="194" class="term-text dim">  title-only classification (optional)</text>
+
+  <text x="20" y="212" class="term-text success">  ✓ All checks passed. You are ready to generate docs!</text>
+
+  <!-- divider -->
+  <line x1="20" y1="228" x2="800" y2="228" stroke="#21262d" stroke-width="1"/>
+
+  <!-- examples -->
+  <text x="20" y="248" class="term-text section">devdocs-forge-agent examples</text>
+  <text x="20" y="268" class="term-text ok">  OK</text>
+  <text x="64" y="268" class="term-text cmd">  Copied 3 example transcripts to input/</text>
+
+  <!-- divider -->
+  <line x1="20" y1="284" x2="800" y2="284" stroke="#21262d" stroke-width="1"/>
+
+  <!-- generate -->
+  <text x="20" y="304" class="term-text section">devdocs-forge-agent generate</text>
+  <text x="20" y="322" class="term-text info">  Parsing: examples/transcripts/angular-signals-tutorial.md</text>
+  <text x="20" y="340" class="term-text info">  Building prompt for mode: docusaurus</text>
+  <text x="20" y="358" class="term-text info">  Generating with provider: mock</text>
+  <text x="20" y="376" class="term-text info">  Writing output files...</text>
+
+  <!-- success -->
+  <text x="20" y="404" class="term-text success">  ✓ Documentation generated successfully!</text>
+  <text x="20" y="422" class="term-text info">  Output directory: output/angular-signals-reactive-state-2026-05-12/</text>
+  <text x="20" y="440" class="term-text info">  Provider: mock  Model: mock-v1</text>
+
+  <text x="20" y="460" class="term-text dim">  Files: index.md · metadata.json · review-checklist.md · source-summary.md</text>
+</svg>
