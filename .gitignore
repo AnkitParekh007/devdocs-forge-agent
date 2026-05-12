@@ -39,3 +39,5 @@ temp/
 
 #AI Models
 CLAUDE.MD
+.claude/*
+.claude/settings.local.json
