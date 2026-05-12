@@ -432,7 +432,3 @@ If devdocs-forge-agent helps you ship better documentation, please give it a sta
 [MIT](LICENSE) — free to use, modify, and distribute.
 
 ---
-
-## Attribution
-
-devdocs-forge-agent is inspired by the open-source, local-first, agent-friendly structure of projects like [career-ops](https://github.com/sanjfer/career-ops), but solves a different problem: developer documentation generation from tutorial transcripts and notes.
