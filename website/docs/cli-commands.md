@@ -15,7 +15,8 @@ Validates your setup. Run this first whenever something isn't working.
 npm run doctor
 ```
 
-Checks: Node.js version, package.json, config file, .env, provider, API keys, YOUTUBE_API_KEY, directories.
+Checks: Node.js version, `package.json`, config file, `.env`, provider, API keys,
+`YOUTUBE_API_KEY`, and required directories.
 
 ---
 
@@ -49,7 +50,7 @@ One-command demo. Runs in mock mode regardless of your `.env` setting.
 npm run demo
 ```
 
-Runs: doctor → examples → generate (Angular Signals tutorial, docusaurus) → verify
+Runs: `doctor` → `examples` → `generate` (Angular Signals tutorial, docusaurus) → `verify`
 
 ---
 
@@ -61,7 +62,7 @@ Generates documentation from a transcript file.
 npm run generate -- --file <path> [options]
 ```
 
-**Flags:**
+### Flags
 
 | Flag | Required | Description |
 |------|----------|-------------|
@@ -71,19 +72,33 @@ npm run generate -- --file <path> [options]
 | `--source-url <url>` | No | Static source URL for attribution |
 | `--force` | No | Bypass low-confidence classification |
 
-**Examples:**
+### Basic example
 
 ```bash
-# Basic generation
 npm run generate -- --file input/my-tutorial.md --type docusaurus
+```
 
-# With video URL (runs intake guard)
-npm run generate -- --url "https://youtube.com/watch?v=..." --file input/my-tutorial.md
+### With video URL (runs intake guard)
 
-# Force bypass for low-confidence classification
-npm run generate -- --url "https://youtube.com/watch?v=..." --file input/my-tutorial.md --force
+```bash
+npm run generate -- \
+  --url "https://youtube.com/watch?v=..." \
+  --file input/my-tutorial.md \
+  --type docusaurus
+```
 
-# All mode types
+### Force bypass for low-confidence classification
+
+```bash
+npm run generate -- \
+  --url "https://youtube.com/watch?v=..." \
+  --file input/my-tutorial.md \
+  --force
+```
+
+### All output modes
+
+```bash
 npm run generate -- --file input/tutorial.md --type blog
 npm run generate -- --file input/tutorial.md --type faq
 npm run generate -- --file input/tutorial.md --type readme
@@ -94,6 +109,8 @@ npm run generate -- --file input/tutorial.md --type changelog
 npm run generate -- --file input/tutorial.md --type seo
 npm run generate -- --file input/tutorial.md --type gitbook
 ```
+
+See [Modes](/docs/modes) for a full description of each output type.
 
 ---
 
@@ -141,7 +158,7 @@ npm run devdocs-forge-agent -- inspect-url "https://youtube.com/watch?v=..."
 
 ## `npm run devdocs-forge-agent -- validate-source`
 
-Validates a video URL + local transcript file together.
+Validates a video URL and a local transcript file together before generation.
 
 ```bash
 npm run devdocs-forge-agent -- validate-source \
@@ -173,9 +190,9 @@ npm run build
 
 ## Input file format
 
-Transcript files are plain Markdown or text. Add YAML frontmatter to include a source URL:
+Transcript files are plain Markdown or plain text. Add YAML frontmatter to include a source URL for attribution:
 
-```markdown
+```markdown title="input/my-tutorial.md"
 ---
 source_url: https://example.com/original-tutorial
 ---
@@ -184,3 +201,8 @@ source_url: https://example.com/original-tutorial
 
 Content goes here...
 ```
+
+:::info No scraping
+DevDocs Forge Agent does not scrape YouTube, download captions, or access any video
+platform API for content. You always provide your own transcript file via `--file`.
+:::

@@ -16,7 +16,8 @@ Generate your first doc in under 5 minutes. No API key needed.
 - Git
 
 ```bash
-node --version  # v18.x.x or higher
+node --version   # v18.x.x or higher
+npm --version    # v9.x.x or higher
 ```
 
 ## 1. Clone and install
@@ -46,6 +47,7 @@ npm run demo
 ```
 
 This single command:
+
 1. Runs `doctor` to validate your setup
 2. Copies example transcripts to `input/`
 3. Generates a Docusaurus page from the Angular Signals tutorial
@@ -57,13 +59,21 @@ Generated files appear in `output/angular-signals-tutorial-{date}/`:
 
 ```
 output/angular-signals-tutorial-2026-05-13/
-├── index.md              ← Generated documentation
-├── metadata.json         ← Provider, model, timestamp
-├── review-checklist.md   ← Review before publishing
-├── source-summary.md     ← Source stats
+├── index.md
+├── metadata.json
+├── review-checklist.md
+├── source-summary.md
 └── docs/
-    └── angular-signals-tutorial.md  ← Docusaurus-ready
+    └── angular-signals-tutorial.md
 ```
+
+| File | Purpose |
+|------|---------|
+| `index.md` | Main generated documentation |
+| `metadata.json` | Provider, model, timestamp, and warnings |
+| `review-checklist.md` | Human review checklist before publishing |
+| `source-summary.md` | Source stats and attribution summary |
+| `docs/angular-signals-tutorial.md` | Docusaurus-ready page with frontmatter |
 
 ## 5. Generate from your own transcript
 
@@ -73,7 +83,7 @@ Drop your transcript into `input/` and run:
 npm run generate -- --file input/my-tutorial.md --type docusaurus
 ```
 
-Or choose a different output mode:
+Choose a different output mode:
 
 ```bash
 npm run generate -- --file input/my-tutorial.md --type blog
@@ -85,7 +95,7 @@ npm run generate -- --file input/my-tutorial.md --type readme
 
 Edit `.env`:
 
-```env
+```env title=".env"
 DEVDOCS_PROVIDER=openai
 OPENAI_API_KEY=sk-...
 OPENAI_MODEL=gpt-4.1-mini
