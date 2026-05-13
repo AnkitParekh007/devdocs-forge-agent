@@ -19,6 +19,7 @@ npm run doctor
 ```
 
 Output:
+
 ```
 devdocs-forge-agent doctor
 ──────────────────────────────────────
@@ -66,13 +67,14 @@ npm run generate -- --url "https://youtube.com/watch?v=..." --file input/my-tuto
 ```
 
 **Flags:**
-| Flag | Required | Description |
-|------|----------|-------------|
-| `--file` | Yes | Path to transcript file |
-| `--type` | No | Output mode (default from config) |
-| `--url` | No | Video URL — validates and classifies before generation; also used as `sourceUrl` |
-| `--source-url` | No | Static source URL for attribution (use `--url` when validating a video) |
-| `--force` | No | Bypass low-confidence classification warning (only if you own the content) |
+
+| Flag             | Required | Description                                                                         |
+| ---------------- | -------- | ----------------------------------------------------------------------------------- |
+| `--file`       | Yes      | Path to transcript file                                                             |
+| `--type`       | No       | Output mode (default from config)                                                   |
+| `--url`        | No       | Video URL — validates and classifies before generation; also used as `sourceUrl` |
+| `--source-url` | No       | Static source URL for attribution (use `--url`when validating a video)            |
+| `--force`      | No       | Bypass low-confidence classification warning (only if you own the content)          |
 
 ### `devdocs-forge-agent inspect-url`
 
@@ -83,9 +85,10 @@ npm run devdocs-forge-agent -- inspect-url "https://youtube.com/watch?v=..."
 ```
 
 Output includes:
-- Platform and video ID
-- YouTube metadata (title, channel, category, duration, tags) — requires `YOUTUBE_API_KEY`
-- Tech classification score (0–100) with confidence level and signal breakdown
+
+* Platform and video ID
+* YouTube metadata (title, channel, category, duration, tags) — requires `YOUTUBE_API_KEY`
+* Tech classification score (0–100) with confidence level and signal breakdown
 
 ### `devdocs-forge-agent validate-source`
 
@@ -98,6 +101,7 @@ npm run devdocs-forge-agent -- validate-source \
 ```
 
 Output:
+
 ```
 devdocs-forge-agent validate-source
 ──────────────────────────────────────
@@ -139,12 +143,44 @@ npm run verify -- --dir output/my-doc-2025-01-15/
 ```
 
 Checks:
-- H1 title present
-- No empty sections
-- No API keys in content
-- Frontmatter present for docusaurus/gitbook types
-- Review checklist present
-- Minimum content length
+
+* H1 title present
+* No empty sections
+* No API keys in content
+* Frontmatter present for docusaurus/gitbook types
+* Review checklist present
+* Minimum content length
+
+### `npm run preview`
+
+Starts a local HTTP server that renders your generated Markdown files as HTML in the browser. Run this after `npm run generate` to review your docs before publishing.
+
+```bash
+# Default: http://localhost:4000
+npm run preview
+
+# Custom port
+npm run preview -- --port 5000
+
+# Preview a specific output directory
+npm run preview -- --dir output/my-doc-2026-05-13/
+```
+
+**Flags:**
+
+| Flag       | Default    | Description        |
+| ---------- | ---------- | ------------------ |
+| `--port` | `4000`   | Port to listen on  |
+| `--dir`  | `output` | Directory to serve |
+
+What you get:
+
+* Index page listing all output directories
+* File browser per directory
+* Markdown rendered as HTML — headings, code blocks, tables, bold text all work
+* JSON files served as raw text
+
+Press `Ctrl+C` to stop the server.
 
 ### `npm test`
 

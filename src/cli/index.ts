@@ -16,6 +16,7 @@ import { batchCommand } from './commands/batch.command.js';
 import { verifyCommand } from './commands/verify.command.js';
 import { inspectUrlCommand } from './commands/inspect-url.command.js';
 import { validateSourceCommand } from './commands/validate-source.command.js';
+import { previewCommand } from './commands/preview.command.js';
 
 const require = createRequire(import.meta.url);
 const pkg = require('../../package.json') as { version: string; description: string };
@@ -88,5 +89,15 @@ program
   .description('Validate generated documentation in the output/ directory')
   .option('--dir <path>', 'Specific output subdirectory to verify')
   .action((opts: { dir?: string }) => verifyCommand(opts).catch(handleError));
+
+
+program
+  .command('preview')
+  .description('Serve generated Markdown files as a local web preview')
+  .option('--port <number>', 'Port to listen on', '4000')
+  .option('--dir <path>', 'Output directory to serve', 'output')
+  .action((opts: { port?: string; dir?: string }) =>
+    previewCommand(opts).catch(handleError),
+  );
 
 program.parse(process.argv);

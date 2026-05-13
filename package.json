@@ -17,6 +17,7 @@
     "batch": "tsx src/cli/index.ts batch",
     "providers": "tsx src/cli/index.ts providers",
     "verify": "tsx src/cli/index.ts verify",
+    "preview": "tsx src/cli/index.ts preview",
     "demo": "node scripts/demo.mjs",
     "test": "vitest run",
     "lint": "eslint .",
@@ -28,10 +29,12 @@
     "commander": "^12.1.0",
     "dotenv": "^16.4.5",
     "js-yaml": "^4.1.0",
+    "marked": "^18.0.3",
     "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
+    "@types/marked": "^5.0.2",
     "@types/node": "^20.14.0",
     "eslint": "^9.5.0",
     "prettier": "^3.3.2",
