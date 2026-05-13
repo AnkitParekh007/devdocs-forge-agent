@@ -1,10 +1,11 @@
 /* ============================================================
    DevDocs Forge Agent — Custom Docusaurus Theme
-   Dark-first developer aesthetic
+   Dark-first developer aesthetic, light-mode accessible
    ============================================================ */
 
-/* ── Light mode (fallback) ─────────────────────────────────── */
+/* ── Light mode: Docusaurus tokens + AI design tokens ─────── */
 :root {
+  /* Docusaurus primary palette */
   --ifm-color-primary: #2563eb;
   --ifm-color-primary-dark: #1d4ed8;
   --ifm-color-primary-darker: #1e40af;
@@ -13,11 +14,50 @@
   --ifm-color-primary-lighter: #60a5fa;
   --ifm-color-primary-lightest: #93c5fd;
   --ifm-code-font-size: 90%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+
+  /* ── AI design tokens — light mode ─────────────────────── */
+  --ai-bg: #f8fafc;
+  --ai-bg-deep: #eef2ff;
+  --ai-surface: rgba(255, 255, 255, 0.92);
+  --ai-surface-solid: #ffffff;
+  --ai-surface-soft: #f1f5f9;
+  --ai-border: rgba(15, 23, 42, 0.12);
+  --ai-border-strong: rgba(37, 99, 235, 0.28);
+
+  /* Text */
+  --ai-text: #1e293b;
+  --ai-text-strong: #0f172a;
+  --ai-muted: #475569;
+  --ai-muted-strong: #334155;
+  --ai-faint: #64748b;
+
+  /* Accent */
+  --ai-cyan: #0891b2;
+  --ai-blue: #2563eb;
+  --ai-purple: #7c3aed;
+  --ai-green: #047857;
+  --ai-red: #dc2626;
+  --ai-yellow: #b45309;
+
+  /* Terminal tokens — intentionally dark in both themes */
+  --ai-terminal-bg: #0b1120;
+  --ai-terminal-surface: #111827;
+  --ai-terminal-text: #e5e7eb;
+  --ai-terminal-muted: #94a3b8;
+  --ai-terminal-faint: #4b5563;
+  --ai-terminal-prompt: #22d3ee;
+  --ai-terminal-border: rgba(255, 255, 255, 0.07);
+
+  /* Glow */
+  --ai-glow-blue: rgba(37, 99, 235, 0.12);
+  --ai-glow-cyan: rgba(8, 145, 178, 0.1);
+  --ai-glow-purple: rgba(124, 58, 237, 0.1);
 }
 
-/* ── Dark mode — primary brand ─────────────────────────────── */
+/* ── Dark mode: Docusaurus overrides + AI dark tokens ──────── */
 [data-theme='dark'] {
+  /* Docusaurus primary palette */
   --ifm-color-primary: #60a5fa;
   --ifm-color-primary-dark: #3b82f6;
   --ifm-color-primary-darker: #2563eb;
@@ -26,80 +66,105 @@
   --ifm-color-primary-lighter: #bfdbfe;
   --ifm-color-primary-lightest: #eff6ff;
 
-  /* AI-native design tokens */
+  /* ── AI design tokens — dark mode ──────────────────────── */
   --ai-bg: #070b14;
-  --ai-surface: #0d1324;
+  --ai-bg-deep: #0b1120;
+  --ai-surface: rgba(13, 19, 36, 0.72);
+  --ai-surface-solid: #0d1324;
   --ai-surface-soft: #111827;
   --ai-border: rgba(148, 163, 184, 0.18);
+  --ai-border-strong: rgba(96, 165, 250, 0.28);
+
+  /* Text */
   --ai-text: #e5e7eb;
+  --ai-text-strong: #f8fafc;
   --ai-muted: #94a3b8;
+  --ai-muted-strong: #cbd5e1;
+  --ai-faint: #64748b;
+
+  /* Accent */
   --ai-cyan: #22d3ee;
   --ai-blue: #60a5fa;
   --ai-purple: #a78bfa;
   --ai-green: #34d399;
   --ai-red: #f87171;
   --ai-yellow: #fbbf24;
+
+  /* Terminal tokens — same dark in both themes */
+  --ai-terminal-bg: #050a12;
+  --ai-terminal-surface: #0d1117;
+  --ai-terminal-text: #e2e8f0;
+  --ai-terminal-muted: #94a3b8;
+  --ai-terminal-faint: #374151;
+  --ai-terminal-prompt: #22d3ee;
+  --ai-terminal-border: rgba(255, 255, 255, 0.06);
+
+  /* Glow */
   --ai-glow-blue: rgba(96, 165, 250, 0.15);
   --ai-glow-cyan: rgba(34, 211, 238, 0.12);
   --ai-glow-purple: rgba(167, 139, 250, 0.12);
 
-  /* Background */
+  /* Docusaurus overrides */
   --ifm-background-color: #0b1120;
   --ifm-background-surface-color: #0d1324;
-
-  /* Navbar */
   --ifm-navbar-background-color: #0a1628;
   --ifm-navbar-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.06);
-
-  /* Footer */
   --ifm-footer-background-color: #060d1a;
-
-  /* Borders */
   --ifm-toc-border-color: #1e293b;
   --ifm-color-emphasis-300: #334155;
   --ifm-color-emphasis-200: #1e293b;
   --ifm-hr-border-color: #1e293b;
-
-  /* Text */
   --ifm-font-color-base: #e2e8f0;
   --ifm-font-color-secondary: #94a3b8;
-
-  /* Cards / menu */
   --ifm-menu-color-background-active: rgba(96, 165, 250, 0.1);
   --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.04);
-
-  /* Code */
   --ifm-code-background: #1e293b;
   --docusaurus-highlighted-code-line-bg: rgba(96, 165, 250, 0.08);
 }
 
 /* ── Navbar ────────────────────────────────────────────────── */
 .navbar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(12px);
 }
 
 [data-theme='dark'] .navbar {
   background: rgba(10, 22, 40, 0.92);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
 }
 
+/* Navbar title — gradient that works in both themes */
 .navbar__title {
   font-weight: 700;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* Fallback readable color */
+  color: var(--ai-blue);
 }
 
+/* Apply gradient clip only when supported */
+@supports (-webkit-background-clip: text) {
+  .navbar__title {
+    background: linear-gradient(135deg, var(--ai-blue) 0%, var(--ai-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* GitHub icon */
 .navbar-github-link::before {
   content: '';
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E") no-repeat center center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2364748b' d='M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E") no-repeat center center;
   vertical-align: middle;
   margin-right: 6px;
+}
+
+[data-theme='dark'] .navbar-github-link::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E");
 }
 
 /* ── Sidebar ───────────────────────────────────────────────── */
@@ -139,6 +204,23 @@
 }
 
 [data-theme='dark'] pre code {
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Light mode code — use Docusaurus defaults, ensure readable */
+[data-theme='light'] code {
+  background: rgba(15, 23, 42, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 4px;
+  color: #1e40af;
+  font-size: 0.875em;
+  padding: 0.1em 0.4em;
+}
+
+[data-theme='light'] pre code {
   background: transparent;
   border: none;
   color: inherit;
@@ -196,21 +278,35 @@
 }
 
 /* ── Footer ────────────────────────────────────────────────── */
+/* Footer style: 'dark' always renders with dark bg via Docusaurus.
+   These rules ensure text is readable against that dark background. */
 [data-theme='dark'] .footer {
   border-top: 1px solid #1e293b;
 }
 
 .footer__title {
-  color: #e2e8f0;
   font-weight: 600;
+  /* Footer is always dark (style: 'dark') so light text is correct */
+  color: #e2e8f0;
 }
 
-[data-theme='dark'] .footer__link-item {
+.footer__link-item {
   color: #64748b;
+  transition: color 0.15s;
 }
 
-[data-theme='dark'] .footer__link-item:hover {
+.footer__link-item:hover {
   color: #60a5fa;
+}
+
+/* Light-mode footer: Docusaurus dark-footer overrides its own bg,
+   but just in case — ensure readable text */
+[data-theme='light'] .footer__link-item {
+  color: #94a3b8;
+}
+
+[data-theme='light'] .footer__link-item:hover {
+  color: #93c5fd;
 }
 
 /* ── Buttons ───────────────────────────────────────────────── */
@@ -232,7 +328,18 @@
   transition: all 0.15s;
 }
 
-/* ── Doc page ──────────────────────────────────────────────── */
+[data-theme='light'] .button--outline {
+  color: #1e293b;
+  border-color: rgba(15, 23, 42, 0.2);
+}
+
+[data-theme='light'] .button--outline:hover {
+  color: #2563eb;
+  border-color: #2563eb;
+  background: rgba(37, 99, 235, 0.06);
+}
+
+/* ── Doc pages ─────────────────────────────────────────────── */
 [data-theme='dark'] article h1,
 [data-theme='dark'] article h2,
 [data-theme='dark'] article h3 {

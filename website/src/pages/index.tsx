@@ -514,9 +514,9 @@ function OutputSection() {
             </div>
             <div style={{ marginTop: '0.75rem' }}>
               {OUTPUT_FILES.map((f) => (
-                <div key={f.name} style={{ marginBottom: '0.5rem', padding: '0.75rem 1rem', background: 'rgba(13,19,36,0.5)', border: '1px solid rgba(148,163,184,0.1)', borderRadius: '8px' }}>
-                  <p style={{ fontFamily: 'var(--ifm-font-family-monospace)', fontSize: '0.82rem', fontWeight: 700, color: '#60a5fa', margin: '0 0 0.2rem' }}>{f.name}</p>
-                  <p style={{ fontSize: '0.78rem', color: '#64748b', margin: 0 }}>{f.desc}</p>
+                <div key={f.name} className={styles.outputFileCard}>
+                  <p className={styles.outputFileCardName}>{f.name}</p>
+                  <p className={styles.outputFileCardDesc}>{f.desc}</p>
                 </div>
               ))}
             </div>
