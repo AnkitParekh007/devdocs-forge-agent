@@ -88,13 +88,26 @@ function TerminalSection() {
             </div>
           </div>
         </div>
+
+        {/* Star CTA */}
+        <div className={styles.starCta}>
+          <p className={styles.starCtaText}>
+            If DevDocs Forge Agent saves you documentation time, star the repo so more developers can find it.
+          </p>
+          <Link
+            to="https://github.com/AnkitParekh007/devdocs-forge-agent"
+            className={styles.starCtaButton}
+          >
+            ⭐ Star on GitHub
+          </Link>
+        </div>
       </div>
     </section>
   );
 }
 
-/* ── Value prop ────────────────────────────────────────────── */
-function ValuePropSection() {
+/* ── Value prop / Why this exists ──────────────────────────── */
+function WhySection() {
   return (
     <section className={styles.valueProp}>
       <div className={styles.valuePropInner}>
@@ -103,9 +116,106 @@ function ValuePropSection() {
           <span>Docs are great for shipping.</span>
         </p>
         <p className={styles.valuePropSub}>
-          DevDocs Forge Agent converts your tutorial transcripts, product demos, and lesson
-          notes into structured developer documentation — locally, with your own model key.
+          Most technical knowledge gets trapped inside tutorial videos, product demos, meeting
+          recordings, and course lessons — making it hard to search, review, version, or reuse.
         </p>
+        <p className={styles.valuePropSub}>
+          DevDocs Forge Agent converts that raw learning material into reviewable,
+          version-controlled developer documentation — with source attribution,
+          human review checklists, and safe local-first workflows.
+          It creates a strong first draft. You review and publish.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ── Before → After ────────────────────────────────────────── */
+const BEFORE_ITEMS = [
+  'Tutorial transcript',
+  'Product demo notes',
+  'Course lesson recording',
+  'Internal walkthrough',
+  'Raw technical notes',
+];
+
+const AFTER_ITEMS = [
+  'Docusaurus documentation page',
+  'GitBook-friendly guide',
+  'README tutorial',
+  'Blog post',
+  'FAQ document',
+  'Troubleshooting guide',
+  'SEO metadata',
+  'metadata.json + review-checklist.md',
+];
+
+function BeforeAfterSection() {
+  return (
+    <section className={clsx(styles.section, styles.sectionDark)}>
+      <div className={styles.sectionInner}>
+        <div className={styles.sectionCentered}>
+          <span className={styles.sectionLabel}>Transform</span>
+          <h2 className={styles.sectionTitle}>Transcript in. Developer docs out.</h2>
+          <p className={styles.sectionSubtitle}>
+            Turn messy learning material into structured docs developers can search, review, commit, and improve.
+          </p>
+        </div>
+        <div className={styles.beforeAfterGrid}>
+          <div className={styles.beforeCard}>
+            <p className={styles.beforeAfterLabel}>Before</p>
+            <ul className={styles.beforeList}>
+              {BEFORE_ITEMS.map((item) => (
+                <li key={item} className={styles.beforeItem}>
+                  <span className={styles.beforeDot}>●</span> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.beforeAfterArrow}>→</div>
+          <div className={styles.afterCard}>
+            <p className={styles.beforeAfterLabel}>After</p>
+            <ul className={styles.afterList}>
+              {AFTER_ITEMS.map((item) => (
+                <li key={item} className={styles.afterItem}>
+                  <span className={styles.afterCheck}>✓</span> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ── Audience ──────────────────────────────────────────────── */
+const AUDIENCE = [
+  { icon: '🎬', title: 'Developer YouTubers', desc: 'Turn tutorial recordings into Docusaurus sites.' },
+  { icon: '📣', title: 'DevRel teams', desc: 'Convert demo recordings into onboarding docs.' },
+  { icon: '🎓', title: 'Course creators', desc: 'Generate lesson pages from lecture notes.' },
+  { icon: '🔧', title: 'Open-source maintainers', desc: 'Create READMEs and guides from issue walkthroughs.' },
+  { icon: '🏢', title: 'Engineering teams', desc: 'Generate internal runbooks from Loom transcripts.' },
+  { icon: '✍️', title: 'Technical bloggers', desc: 'Draft dev.to posts from talk notes.' },
+];
+
+function AudienceSection() {
+  return (
+    <section className={clsx(styles.section)}>
+      <div className={styles.sectionInner}>
+        <div className={styles.sectionCentered}>
+          <span className={styles.sectionLabel}>Who it's for</span>
+          <h2 className={styles.sectionTitle}>Built for people who turn technical knowledge into reusable docs.</h2>
+        </div>
+        <div className={styles.audienceGrid}>
+          {AUDIENCE.map((a) => (
+            <div key={a.title} className={styles.audienceCard}>
+              <span className={styles.audienceIcon}>{a.icon}</span>
+              <p className={styles.audienceTitle}>{a.title}</p>
+              <p className={styles.audienceDesc}>{a.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -190,47 +300,10 @@ function FeaturesSection() {
   );
 }
 
-/* ── What it generates ─────────────────────────────────────── */
-const GENERATES = [
-  { from: 'Tutorial transcript', to: 'Step-by-step developer guide' },
-  { from: 'Product demo transcript', to: 'Help docs / onboarding page' },
-  { from: 'Course lesson notes', to: 'Lesson page with objectives' },
-  { from: 'Raw learning notes', to: 'Developer blog post' },
-  { from: 'Bug walkthrough', to: 'Troubleshooting guide' },
-  { from: 'API demo transcript', to: 'README tutorial' },
-];
-
-function GeneratesSection() {
-  return (
-    <section className={clsx(styles.section)}>
-      <div className={styles.sectionInner}>
-        <div className={styles.sectionCentered}>
-          <span className={styles.sectionLabel}>What it generates</span>
-          <h2 className={styles.sectionTitle}>Transcript in. Developer docs out.</h2>
-          <p className={styles.sectionSubtitle}>
-            11 output modes. One command.
-          </p>
-        </div>
-        <div className={styles.generatesGrid}>
-          {GENERATES.map((g) => (
-            <div key={g.from} className={styles.generateCard}>
-              <span className={styles.generateArrow}>→</span>
-              <div>
-                <p className={styles.generateFrom}>{g.from}</p>
-                <p className={styles.generateTo}>{g.to}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ── Providers ─────────────────────────────────────────────── */
 function ProvidersSection() {
   return (
-    <section className={clsx(styles.section, styles.sectionDark)}>
+    <section className={clsx(styles.section, styles.sectionAlt)}>
       <div className={styles.sectionInner}>
         <div className={styles.sectionCentered}>
           <span className={styles.sectionLabel}>AI Providers</span>
@@ -378,7 +451,7 @@ const OUTPUT_FILES = [
 
 function OutputSection() {
   return (
-    <section className={clsx(styles.section, styles.sectionAlt)}>
+    <section className={clsx(styles.section, styles.sectionDark)}>
       <div className={styles.sectionInner}>
         <div className={styles.sectionCentered}>
           <span className={styles.sectionLabel}>Output</span>
@@ -467,9 +540,10 @@ export default function Home(): React.ReactElement {
     >
       <HeroSection />
       <TerminalSection />
-      <ValuePropSection />
+      <WhySection />
+      <BeforeAfterSection />
+      <AudienceSection />
       <FeaturesSection />
-      <GeneratesSection />
       <ProvidersSection />
       <IntakeGuardSection />
       <OutputSection />

@@ -42,7 +42,7 @@ Machine-readable record of the generation run:
 ```json
 {
   "title": "Angular Signals: Reactive State",
-  "slug": "angular-signals-reactive-state",
+  "slug": "angular-signals-tutorial",
   "sourceFile": "examples/transcripts/angular-signals-tutorial.md",
   "sourceUrl": "https://youtube.com/watch?v=...",
   "outputType": "docusaurus",
@@ -78,7 +78,7 @@ Summary of the source transcript:
 - **Title:** Angular Signals: Reactive State
 - **Word count:** 444 words
 - **Source URL:** https://...
-- **Slug:** angular-signals-reactive-state
+- **Slug:** angular-signals-tutorial
 ```
 
 ### `docs/{slug}.md` (docusaurus mode)
@@ -87,7 +87,7 @@ An identical copy of `index.md` placed in `docs/` subdirectory for easy copying 
 
 ```markdown
 ---
-id: angular-signals-reactive-state
+id: angular-signals-tutorial
 title: "Angular Signals: Reactive State"
 sidebar_label: "Angular Signals"
 sidebar_position: 1

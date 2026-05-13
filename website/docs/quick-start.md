@@ -53,16 +53,16 @@ This single command:
 
 ## 4. View the output
 
-Generated files appear in `output/angular-signals-*-{date}/`:
+Generated files appear in `output/angular-signals-tutorial-{date}/`:
 
 ```
-output/angular-signals-reactive-state-2026-05-13/
+output/angular-signals-tutorial-2026-05-13/
 ├── index.md              ← Generated documentation
 ├── metadata.json         ← Provider, model, timestamp
 ├── review-checklist.md   ← Review before publishing
 ├── source-summary.md     ← Source stats
 └── docs/
-    └── angular-signals-reactive-state.md  ← Docusaurus-ready
+    └── angular-signals-tutorial.md  ← Docusaurus-ready
 ```
 
 ## 5. Generate from your own transcript

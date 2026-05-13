@@ -22,9 +22,16 @@
 </p>
 
 *Videos are great for learning. Docs are great for shipping.*
-*devdocs-forge-agent converts your tutorial transcripts into structured developer documentation — locally, with your own model key.*
+
+**devdocs-forge-agent** is a local-first AI documentation agent that turns tutorial transcripts, product demos, and lesson notes into developer documentation — with source attribution, human review checklists, and safe local-first workflows.
+
+**[📖 Website](https://ankitparekh007.github.io/devdocs-forge-agent/)** · **[🐛 Issues](https://github.com/AnkitParekh007/devdocs-forge-agent/issues)** · **[✨ Good First Issues](https://github.com/AnkitParekh007/devdocs-forge-agent/issues?q=label%3A%22good+first+issue%22)**
 
 </div>
+
+---
+
+> **⭐ If this project saves you documentation time, please star the repo so more developers can discover it.**
 
 ---
 
@@ -40,14 +47,16 @@ npm run demo
 
 `npm run demo` runs doctor → copies example transcripts → generates a Docusaurus page from the Angular Signals tutorial → validates the output. No API key required — mock mode works out of the box.
 
-Generated files appear in `output/angular-signals-reactive-state-{date}/`:
+Generated files appear in `output/angular-signals-tutorial-{date}/`:
 
 ```
-output/angular-signals-reactive-state-2026-05-12/
+output/angular-signals-tutorial-2026-05-13/
 ├── index.md              ← generated documentation
 ├── metadata.json         ← provider, model, timestamp, source
 ├── review-checklist.md   ← human review tasks before publishing
-└── source-summary.md     ← word count, source URL, slug
+├── source-summary.md     ← word count, source URL, slug
+└── docs/
+    └── angular-signals-tutorial.md  ← Docusaurus-ready with frontmatter
 ```
 
 ---
@@ -57,6 +66,33 @@ output/angular-signals-reactive-state-2026-05-12/
 <p align="center">
   <img src="assets/demo-terminal.svg" alt="npm run demo terminal output" width="820"/>
 </p>
+
+---
+
+## Why This Exists
+
+Videos are great for learning. Docs are great for shipping.
+
+Most technical knowledge gets trapped inside tutorial videos, product demos, meeting recordings, course lessons, and internal walkthroughs. That makes it hard to search, review, version, reuse, or turn into long-term team knowledge.
+
+**devdocs-forge-agent** helps convert that raw learning material into reviewable, version-controlled developer documentation — with source attribution, human review checklists, and safe local-first workflows.
+
+It creates a strong first draft and a structured review process, not a replacement for human technical writers. Every run includes a `review-checklist.md` to verify before publishing.
+
+---
+
+## Before → After
+
+Turn messy learning material into structured docs developers can search, review, commit, and improve.
+
+| Before | After |
+|--------|-------|
+| Tutorial transcript | Step-by-step Docusaurus page |
+| Product demo notes | Help documentation |
+| Course lesson | Lesson page with objectives |
+| Raw learning notes | Blog post + FAQ |
+| Bug walkthrough | Troubleshooting guide |
+| API demo transcript | README tutorial |
 
 ---
 
@@ -77,7 +113,7 @@ No YouTube scraping. No video downloading. No account required. Works entirely o
 
 ---
 
-## Why Developers Star This
+## Why Developers Use This
 
 - **Local-first** — runs entirely on your machine, no cloud backend
 - **Mock mode** — generates real output with zero API keys for development
@@ -129,16 +165,11 @@ cd devdocs-forge-agent
 npm install
 cp .env.example .env
 
-# Check setup (mock mode, no API key needed)
-npm run doctor
+# One-command demo (mock mode, no API key)
+npm run demo
 
-# Copy example transcripts into input/
-npm run examples
-
-# Generate a Docusaurus doc from the Angular Signals example
-npm run generate -- --file examples/transcripts/angular-signals-tutorial.md --type docusaurus
-
-# Validate generated output
+# Or generate manually from your own transcript
+npm run generate -- --file input/my-tutorial.md --type docusaurus
 npm run verify
 ```
 
@@ -175,7 +206,7 @@ GEMINI_API_KEY=...
 GEMINI_MODEL=gemini-2.0-flash
 ```
 
-See [docs/PROVIDERS.md](docs/PROVIDERS.md) for full provider setup and how to add Ollama, Groq, or OpenRouter.
+See the [Providers docs](https://ankitparekh007.github.io/devdocs-forge-agent/docs/providers) for full setup.
 
 ---
 
@@ -227,6 +258,9 @@ npm run init
 # Check your setup
 npm run doctor
 
+# One-command demo (mock mode)
+npm run demo
+
 # Generate documentation from a transcript
 npm run generate -- --file input/my-tutorial.md --type docusaurus
 npm run generate -- --file input/my-tutorial.md --type blog
@@ -252,6 +286,75 @@ npm run verify
 ```
 
 All output goes to `output/{slug}-{YYYY-MM-DD}/`.
+
+See the [CLI Commands reference](https://ankitparekh007.github.io/devdocs-forge-agent/docs/cli-commands) for the full flag reference.
+
+---
+
+## Output Structure
+
+Every generation run produces a timestamped output directory:
+
+```
+output/angular-signals-tutorial-2026-05-13/
+├── index.md              ← main generated documentation
+├── metadata.json         ← provider, model, word count, source URL, timestamp
+├── review-checklist.md   ← human review tasks before publishing
+├── source-summary.md     ← source word count, slug, title
+└── docs/
+    └── angular-signals-tutorial.md   ← Docusaurus-ready copy with YAML frontmatter
+```
+
+Run `npm run verify` to validate all outputs before publishing.
+
+---
+
+## Modes
+
+| Mode | Command | What It Generates |
+|------|---------|-------------------|
+| `docusaurus` | `--type docusaurus` | Docusaurus v3 page with frontmatter |
+| `blog` | `--type blog` | Developer blog post with SEO |
+| `docs` | `--type docs` | General documentation page |
+| `gitbook` | `--type gitbook` | GitBook-formatted doc with hints |
+| `readme` | `--type readme` | GitHub README tutorial |
+| `faq` | `--type faq` | FAQ organized by category |
+| `troubleshooting` | `--type troubleshooting` | Error/fix troubleshooting guide |
+| `lesson` | `--type lesson` | Course lesson with objectives |
+| `social` | `--type social` | LinkedIn + X + dev.to summaries |
+| `changelog` | `--type changelog` | Keep A Changelog format release notes |
+| `seo` | `--type seo` | SEO metadata and keyword analysis |
+
+---
+
+## Example Output
+
+Running on `examples/transcripts/angular-signals-tutorial.md` with `--type docusaurus`:
+
+```markdown
+---
+id: angular-signals-tutorial
+title: "Angular Signals: Reactive State Without the Complexity"
+sidebar_label: "Angular Signals"
+sidebar_position: 1
+description: "Learn how to use Angular Signals for reactive state..."
+tags:
+  - tutorial
+  - documentation
+---
+
+Angular 17 introduced Signals as a stable reactive primitive...
+
+## Prerequisites
+...
+
+## What Is a Signal?
+...
+
+## Review Checklist
+- [ ] Facts verified against source transcript
+- [ ] Code snippets tested locally
+```
 
 ---
 
@@ -284,57 +387,6 @@ Transcript / Notes
 
 ---
 
-## Modes
-
-| Mode | Command | What It Generates |
-|------|---------|-------------------|
-| `docusaurus` | `--type docusaurus` | Docusaurus v3 page with frontmatter |
-| `blog` | `--type blog` | Developer blog post with SEO |
-| `docs` | `--type docs` | General documentation page |
-| `gitbook` | `--type gitbook` | GitBook-formatted doc with hints |
-| `readme` | `--type readme` | GitHub README tutorial |
-| `faq` | `--type faq` | FAQ organized by category |
-| `troubleshooting` | `--type troubleshooting` | Error/fix troubleshooting guide |
-| `lesson` | `--type lesson` | Course lesson with objectives |
-| `social` | `--type social` | LinkedIn + X + dev.to summaries |
-| `changelog` | `--type changelog` | Keep A Changelog format release notes |
-| `seo` | `--type seo` | SEO metadata and keyword analysis |
-
----
-
-## Example Output
-
-Running on `examples/transcripts/angular-signals-tutorial.md` with `--type docusaurus`:
-
-```markdown
----
-id: angular-signals-reactive-state
-title: "Angular Signals: Reactive State Without the Complexity"
-sidebar_label: "Angular Signals"
-sidebar_position: 1
-description: "Learn how to use Angular Signals for reactive state..."
-tags:
-  - tutorial
-  - documentation
----
-
-Angular 17 introduced Signals as a stable reactive primitive...
-
-## Prerequisites
-...
-
-## What Is a Signal?
-...
-
-## Review Checklist
-- [ ] Facts verified against source transcript
-- [ ] Code snippets tested locally
-```
-
-See full examples in [examples/outputs/](examples/outputs/).
-
----
-
 ## Project Structure
 
 ```
@@ -356,14 +408,21 @@ devdocs-forge-agent/
 ├── examples/
 │   ├── transcripts/      # Example input transcripts
 │   └── outputs/          # Example generated outputs
-├── docs/                 # Full documentation
-├── tests/                # Vitest test suite (54 tests)
+├── tests/                # Vitest test suite
 ├── assets/               # SVG/PNG assets for README
 ├── input/                # Drop your transcripts here
 ├── output/               # Generated docs land here
 ├── config/               # Your project config
 └── .env.example          # Provider configuration template
 ```
+
+---
+
+## Docs Website
+
+Full documentation is available at:
+
+**[https://ankitparekh007.github.io/devdocs-forge-agent/](https://ankitparekh007.github.io/devdocs-forge-agent/)**
 
 ---
 
@@ -376,31 +435,6 @@ devdocs-forge-agent/
 - Source attribution is strongly recommended when processing others' content
 - Never scrape or download transcripts from platforms that prohibit it
 
-See [LEGAL_DISCLAIMER.md](LEGAL_DISCLAIMER.md) and [docs/SAFETY.md](docs/SAFETY.md) for full details.
-
----
-
-## Roadmap
-
-- [x] CLI MVP
-- [x] Provider abstraction (OpenAI, Anthropic, Gemini, mock)
-- [x] 11 documentation output modes
-- [x] Docusaurus output mode
-- [x] GitBook output mode
-- [x] Batch mode
-- [x] Video Intake Guard (URL validation + tech classification + transcript check)
-- [ ] Ollama provider (local LLMs)
-- [ ] OpenRouter provider
-- [ ] Browser UI (React or Angular)
-- [ ] VS Code extension
-- [ ] GitHub PR generator from changelogs
-- [ ] Docs website generator (auto-publishes to GitHub Pages)
-- [ ] Transcript chunking for long videos
-- [ ] Diagram generation (Mermaid from architecture sections)
-- [ ] Multilingual output support
-
-See [ROADMAP.md](ROADMAP.md) for details and contribution opportunities.
-
 ---
 
 ## Contributing
@@ -410,20 +444,43 @@ We welcome all kinds of contributions:
 | Type | How |
 |------|-----|
 | **Good first issue** | Browse issues labeled `good first issue` |
-| **Add a provider** | Create `src/providers/yourprovider.provider.ts` — see [docs/PROVIDERS.md](docs/PROVIDERS.md) |
-| **Add a mode** | Create `modes/yourmode.md` — see [docs/MODES.md](docs/MODES.md) |
-| **Improve prompts** | Edit mode files in `modes/` — no TypeScript needed |
+| **Add a provider** | Create `src/providers/yourprovider.provider.ts` |
+| **Add a mode** | Create `modes/yourmode.md` — no TypeScript needed |
+| **Improve prompts** | Edit mode files in `modes/` |
 | **Add examples** | Add transcripts to `examples/transcripts/` |
-| **Improve docs** | Edit files in `docs/` |
-| **Build the UI** | Open an issue to discuss approach |
+| **Improve docs** | Edit files in `website/docs/` or `docs/` |
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and [docs/GOOD_FIRST_ISSUES.md](docs/GOOD_FIRST_ISSUES.md) for full setup instructions.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full setup instructions.
 
 ---
 
-## Star This Project
+## Good First Issues
 
-If devdocs-forge-agent helps you ship better documentation, please give it a star — it helps more developers discover it.
+| Issue | Description |
+|-------|-------------|
+| [#1 Ollama provider](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/1) | Add local LLM support |
+| [#2 OpenRouter provider](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/2) | Access 200+ models |
+| [#3 Mermaid diagram mode](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/3) | New output mode |
+| [#4 Improve Docusaurus frontmatter](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/4) | Smarter tag extraction |
+| [#5 Minimal web preview](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/5) | Browser preview |
+
+---
+
+## Roadmap
+
+- [x] CLI MVP
+- [x] Provider abstraction (OpenAI, Anthropic, Gemini, mock)
+- [x] 11 documentation output modes
+- [x] Video Intake Guard (URL validation + tech classification + transcript check)
+- [x] `npm run demo` one-command demo
+- [ ] Ollama provider (local LLMs)
+- [ ] OpenRouter provider
+- [ ] Browser UI (React or Angular)
+- [ ] VS Code extension
+- [ ] Transcript chunking for long videos
+- [ ] Diagram generation (Mermaid from architecture sections)
+
+See [ROADMAP.md](ROADMAP.md) for details.
 
 ---
 
@@ -432,3 +489,7 @@ If devdocs-forge-agent helps you ship better documentation, please give it a sta
 [MIT](LICENSE) — free to use, modify, and distribute.
 
 ---
+
+> ⭐ **If devdocs-forge-agent saves you documentation time, please star the repo** — it helps more developers find it.
+>
+> [https://github.com/AnkitParekh007/devdocs-forge-agent](https://github.com/AnkitParekh007/devdocs-forge-agent)

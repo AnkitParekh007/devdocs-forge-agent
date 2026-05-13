@@ -643,3 +643,165 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+/* ── Star CTA ──────────────────────────────────────────────── */
+.starCta {
+  margin-top: 2rem;
+  background: rgba(234, 179, 8, 0.06);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.starCtaText {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin: 0;
+  flex: 1;
+  min-width: 200px;
+  line-height: 1.5;
+}
+
+.starCtaButton {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: rgba(234, 179, 8, 0.12) !important;
+  border: 1px solid rgba(234, 179, 8, 0.35) !important;
+  border-radius: 7px !important;
+  padding: 0.5rem 1.25rem !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: #fbbf24 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: all 0.15s !important;
+}
+
+.starCtaButton:hover {
+  background: rgba(234, 179, 8, 0.2) !important;
+  border-color: rgba(234, 179, 8, 0.5) !important;
+  color: #fbbf24 !important;
+}
+
+/* ── Before → After ───────────────────────────────────────── */
+.beforeAfterGrid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .beforeAfterGrid {
+    grid-template-columns: 1fr;
+  }
+  .beforeAfterArrow {
+    text-align: center;
+  }
+}
+
+.beforeCard,
+.afterCard {
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+.beforeCard {
+  background: rgba(239, 68, 68, 0.05);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.afterCard {
+  background: rgba(34, 197, 94, 0.05);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.beforeAfterLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+
+.beforeCard .beforeAfterLabel { color: #f87171; }
+.afterCard .beforeAfterLabel  { color: #4ade80; }
+
+.beforeList,
+.afterList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.beforeItem,
+.afterItem {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.beforeDot { color: #f87171; font-size: 0.6rem; }
+.afterCheck { color: #4ade80; font-weight: 700; }
+
+.beforeAfterArrow {
+  font-size: 2rem;
+  color: #3b82f6;
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+/* ── Audience ──────────────────────────────────────────────── */
+.audienceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.audienceCard {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.audienceCard:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.audienceIcon {
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.audienceTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0 0 0.4rem;
+}
+
+.audienceDesc {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}

@@ -28,7 +28,7 @@
   <circle cx="22" cy="18" r="6" fill="#ff5f57"/>
   <circle cx="42" cy="18" r="6" fill="#febc2e"/>
   <circle cx="62" cy="18" r="6" fill="#28c840"/>
-  <text x="410" y="23" font-family="-apple-system, sans-serif" font-size="13px" fill="#8b949e" text-anchor="middle">output/angular-signals-reactive-state-2026-05-12/index.md</text>
+  <text x="410" y="23" font-family="-apple-system, sans-serif" font-size="13px" fill="#8b949e" text-anchor="middle">output/angular-signals-tutorial-2026-05-13/index.md</text>
 
   <!-- Generated content area -->
   <rect x="20" y="46" width="480" height="440" fill="#161b22" rx="8"/>
@@ -37,7 +37,7 @@
   <!-- Frontmatter block -->
   <rect x="30" y="56" width="460" height="110" fill="#0d1117" rx="4"/>
   <text x="40" y="74" class="frontmatter">---</text>
-  <text x="40" y="90" class="frontmatter">id: </text><text x="68" y="90" class="fm-val">angular-signals-reactive-state</text>
+  <text x="40" y="90" class="frontmatter">id: </text><text x="68" y="90" class="fm-val">angular-signals-tutorial</text>
   <text x="40" y="106" class="frontmatter">title: </text><text x="84" y="106" class="fm-val">"Angular Signals: Reactive State"</text>
   <text x="40" y="122" class="frontmatter">sidebar_position: </text><text x="172" y="122" class="fm-val">1</text>
   <text x="40" y="138" class="frontmatter">tags: </text><text x="84" y="138" class="fm-val">[tutorial, angular, documentation]</text>

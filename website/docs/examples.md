@@ -7,6 +7,10 @@ description: Real workflow examples and sample outputs for devdocs-forge-agent.
 
 # Examples
 
+:::note Example transcripts
+The transcripts in `examples/transcripts/` are original, synthetic content created specifically for this project — not scraped from any platform.
+:::
+
 ## Run the built-in demo
 
 The fastest way to see devdocs-forge-agent in action. Runs entirely in mock mode — no API key needed.
@@ -17,7 +21,7 @@ npm run demo
 
 This runs: `doctor` → `examples` → `generate` (Angular Signals tutorial, docusaurus) → `verify`
 
-Output lands in `output/angular-signals-reactive-state-YYYY-MM-DD/`.
+Output lands in `output/angular-signals-tutorial-YYYY-MM-DD/`.
 
 ---
 
@@ -31,11 +35,11 @@ npm run generate -- \
   --type docusaurus
 ```
 
-**Output:** `output/angular-signals-reactive-state-2026-05-13/index.md`
+**Output:** `output/angular-signals-tutorial-2026-05-13/index.md`
 
 ```markdown
 ---
-id: angular-signals-reactive-state
+id: angular-signals-tutorial
 title: "Angular Signals: Reactive State"
 sidebar_label: "Angular Signals"
 sidebar_position: 1
@@ -58,7 +62,7 @@ description: "Learn how Angular Signals provide reactive state management..."
 ...
 ```
 
-A copy is also written to `output/.../docs/angular-signals-reactive-state.md` — drop it directly into your Docusaurus `docs/` folder.
+A copy is also written to `output/.../docs/angular-signals-tutorial.md` — drop it directly into your Docusaurus `docs/` folder.
 
 ---
 
@@ -70,7 +74,7 @@ npm run generate -- \
   --type blog
 ```
 
-**Output:** `output/angular-signals-reactive-state-2026-05-13/index.md`
+**Output:** `output/angular-signals-tutorial-2026-05-13/index.md`
 
 The blog output includes a hook intro, code examples with explanations, and a "Key Takeaways" section.
 
@@ -185,7 +189,7 @@ Always run verify after generating:
 npm run verify
 
 # Or validate a specific run
-npm run verify -- --dir output/angular-signals-reactive-state-2026-05-13/
+npm run verify -- --dir output/angular-signals-tutorial-2026-05-13/
 ```
 
 ---
