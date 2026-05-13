@@ -20,7 +20,9 @@
     "demo": "node scripts/demo.mjs",
     "test": "vitest run",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "website:start": "cd website && node ./node_modules/@docusaurus/core/bin/docusaurus.mjs start",
+    "website:build": "cd website && node ./node_modules/@docusaurus/core/bin/docusaurus.mjs build"
   },
   "dependencies": {
     "commander": "^12.1.0",
