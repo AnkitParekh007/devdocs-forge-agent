@@ -43,7 +43,9 @@
 
 ---
 
-> **⭐ If this project saves you documentation time, please star the repo so more developers can discover it.**
+> **Why star this repo?**
+>
+> Star or follow **devdocs-forge-agent** if you want a local-first documentation workflow that turns transcripts you already have into reviewable Markdown, Docusaurus, and GitBook drafts. It does not scrape videos or download captions, and its provider abstraction keeps OpenAI, Anthropic, Gemini, and future local models behind one CLI workflow.
 
 ---
 
