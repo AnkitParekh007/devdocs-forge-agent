@@ -3,9 +3,10 @@ import { MockProvider } from './mock.provider.js';
 import { OpenAIProvider } from './openai.provider.js';
 import { AnthropicProvider } from './anthropic.provider.js';
 import { GeminiProvider } from './gemini.provider.js';
+import { OllamaProvider } from './ollama.provider.js';
 import type { Provider } from './provider.types.js';
 
-const SUPPORTED = ['mock', 'openai', 'anthropic', 'gemini'] as const;
+const SUPPORTED = ['mock', 'openai', 'anthropic', 'gemini', 'ollama'] as const;
 
 /**
  * Returns the active Provider based on DEVDOCS_PROVIDER env var.
@@ -28,6 +29,8 @@ export function getProvider(overrideName?: string): Provider {
       return new AnthropicProvider();
     case 'gemini':
       return new GeminiProvider();
+    case 'ollama':
+      return new OllamaProvider();
     default:
       throw new DocuForgeError(
         `Unknown provider: "${name}"`,

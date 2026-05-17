@@ -4,7 +4,7 @@ import { logger } from '../../utils/logger.js';
 
 const CWD = process.cwd();
 
-const SUPPORTED_PROVIDERS = ['mock', 'openai', 'anthropic', 'gemini'];
+const SUPPORTED_PROVIDERS = ['mock', 'openai', 'anthropic', 'gemini', 'ollama'];
 
 const PROVIDER_KEY_MAP: Record<string, string> = {
   openai: 'OPENAI_API_KEY',
@@ -63,7 +63,9 @@ export async function doctorCommand(): Promise<void> {
   }
 
   // API key check (only for non-mock)
-  if (provider !== 'mock') {
+  if (provider === 'ollama') {
+    logger.ok('API key', 'not required for local Ollama');
+  } else if (provider !== 'mock') {
     const keyName = PROVIDER_KEY_MAP[provider];
     if (keyName) {
       const keyValue = process.env[keyName];

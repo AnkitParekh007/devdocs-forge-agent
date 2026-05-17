@@ -65,6 +65,27 @@ Recommended models: `gemini-2.0-flash` (fast), `gemini-1.5-pro` (high quality).
 
 ---
 
+## Ollama
+
+Use Ollama for local, open-weight models with no API key or external network
+call from devdocs-forge-agent.
+
+1. Install Ollama from [ollama.com](https://ollama.com/).
+2. Pull a model, for example `ollama pull llama3`.
+3. Start Ollama if it is not already running.
+
+```env
+DEVDOCS_PROVIDER=ollama
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=llama3
+```
+
+The provider calls `POST /api/generate` with `stream: false`. If Ollama is not
+reachable, devdocs-forge-agent raises a `DocuForgeError` with a setup hint
+instead of exposing a raw fetch failure.
+
+---
+
 ## Adding a New Provider
 
 All providers implement the `Provider` interface in `src/providers/provider.types.ts`:

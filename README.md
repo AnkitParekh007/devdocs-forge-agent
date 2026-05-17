@@ -131,7 +131,7 @@ No YouTube scraping. No video downloading. No account required. Works entirely o
 
 - **Local-first** — runs entirely on your machine, no cloud backend
 - **Mock mode** — generates real output with zero API keys for development
-- **Bring your own model key** — OpenAI, Anthropic, Gemini, or Ollama (planned)
+- **Bring your own model** — OpenAI, Anthropic, Gemini, or local Ollama
 - **Markdown-first outputs** — drop directly into any docs site
 - **Docusaurus/GitBook-ready** — correct frontmatter, admonitions, and structure out of the box
 - **Built for developer tutorials** — understands code walkthroughs, API demos, course lessons
@@ -387,7 +387,7 @@ flowchart TD
     A["Transcript Input\n(--file input/tutorial.md)"] --> B["Safety / Intake Guard\n(URL validate · tech classify · transcript check)"]
     B --> C["Mode Selector\n(--type docusaurus|blog|faq|...)"]
     C --> D["Prompt Builder\n(_shared.md + _profile.md + mode.md + config)"]
-    D --> E["Provider Adapter\nmock | OpenAI | Anthropic | Gemini"]
+    D --> E["Provider Adapter\nmock | OpenAI | Anthropic | Gemini | Ollama"]
     E --> F["Markdown Generator\n(index.md · docs/{slug}.md)"]
     F --> G["Review Checklist\n(review-checklist.md · metadata.json · source-summary.md)"]
     G --> H["Docs Site\n(Docusaurus · GitBook · GitHub · Blog)"]
@@ -422,12 +422,12 @@ See [`docs/recruiter-review-guide.md`](docs/recruiter-review-guide.md) for a ful
 ## Why Developers Star This
 
 - **Zero-config demo** — `npm run demo` works with no API key, generates real output
-- **BYO model** — OpenAI, Anthropic, Gemini, or local Ollama (planned) — no provider lock-in
+- **BYO model** — OpenAI, Anthropic, Gemini, or local Ollama — no provider lock-in
 - **Markdown-first** — outputs drop directly into Docusaurus, GitBook, GitHub, or any Markdown-based docs site
 - **Prompt engineering as text files** — the `modes/` folder is plain Markdown, not code. Anyone can improve the prompts
 - **Review-first by design** — every output includes a human review checklist before publishing
 - **Agent-friendly** — `AGENTS.md` and `CLAUDE.md` make AI-assisted development workflows first-class
-- **9 labeled good first issues** — contributor onramp is real, not aspirational
+- **8 labeled good first issues** — contributor onramp is real, not aspirational
 - **Local-first, no telemetry** — nothing leaves your machine except your own API calls
 
 ---
@@ -503,7 +503,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full setup instructions.
 
 | Issue | Description | Difficulty |
 |---|---|---|
-| [#1 Ollama provider](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/1) | Add local LLM support — no API key | Low (~80 lines) |
 | [#2 OpenRouter provider](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/2) | Access 200+ models via unified API | Low (~60 lines) |
 | [#3 Mermaid diagram mode](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/3) | New `--type diagram` output mode | Low (prompt + config) |
 | [#4 Improve Docusaurus frontmatter](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/4) | Custom fields, tag merging, draft support | Low–Medium |
@@ -520,12 +519,12 @@ See [`docs/GOOD_FIRST_ISSUES.md`](docs/GOOD_FIRST_ISSUES.md) for full specs and 
 ## Roadmap
 
 - [x] CLI MVP
-- [x] Provider abstraction (OpenAI, Anthropic, Gemini, mock)
+- [x] Provider abstraction (OpenAI, Anthropic, Gemini, Ollama, mock)
 - [x] 11 documentation output modes
 - [x] Video Intake Guard (URL validation + tech classification + transcript check)
 - [x] `npm run demo` one-command demo
 - [ ] `npm run preview` — local browser preview of generated docs (planned — previous PR closed, open for contribution)
-- [ ] Ollama provider (local LLMs)
+- [x] Ollama provider (local LLMs)
 - [ ] OpenRouter provider
 - [ ] Browser UI (React or Angular)
 - [ ] VS Code extension

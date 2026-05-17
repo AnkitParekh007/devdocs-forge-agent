@@ -11,7 +11,7 @@ Want to work on something? Open an issue!
 | Feature | Status |
 |---------|--------|
 | CLI MVP (`init`, `doctor`, `generate`, `batch`, `verify`) | ✅ Done |
-| Provider abstraction (OpenAI, Anthropic, Gemini, mock) | ✅ Done |
+| Provider abstraction (OpenAI, Anthropic, Gemini, Ollama, mock) | ✅ Done |
 | Docusaurus output mode | ✅ Done |
 | GitBook output mode | ✅ Done |
 | Blog, FAQ, troubleshooting, lesson, social modes | ✅ Done |
@@ -30,7 +30,7 @@ Want to work on something? Open an issue!
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Ollama provider (local LLMs) | Planned | fetch-based, no install |
+| Ollama provider (local LLMs) | Done | fetch-based, no install |
 | OpenRouter provider | Planned | unified API for 100+ models |
 | Groq provider | Planned | fast inference |
 | Mistral provider | Planned | EU-hosted option |

@@ -104,7 +104,7 @@ See `.github/workflows/ci.yml`:
 | Test files | 9 |
 | Lines of TypeScript | ~2,000 |
 | Output modes | 11 |
-| AI providers supported | 4 (including mock) |
+| AI providers supported | 5 (including mock) |
 | CLI commands | 10 |
 | CI environments | Ubuntu + macOS × Node 22 + 24 |
 

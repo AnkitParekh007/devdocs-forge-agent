@@ -34,7 +34,7 @@ Machine-readable generation record. Schema:
 
 ```typescript
 {
-  provider: string;           // "mock" | "openai" | "anthropic" | "gemini"
+  provider: string;           // "mock" | "openai" | "anthropic" | "gemini" | "ollama"
   model: string;              // exact model ID used
   mode: string;               // output mode (docusaurus, blog, faq, etc.)
   sourceFile: string;         // path to input transcript

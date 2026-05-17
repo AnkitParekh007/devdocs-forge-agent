@@ -20,14 +20,14 @@ describe('Doctor checks', () => {
   });
 
   it('recognizes valid providers', () => {
-    const valid = ['mock', 'openai', 'anthropic', 'gemini'];
+    const valid = ['mock', 'openai', 'anthropic', 'gemini', 'ollama'];
     for (const p of valid) {
       expect(valid.includes(p)).toBe(true);
     }
   });
 
   it('rejects invalid provider names', () => {
-    const valid = ['mock', 'openai', 'anthropic', 'gemini'];
+    const valid = ['mock', 'openai', 'anthropic', 'gemini', 'ollama'];
     expect(valid.includes('youtube-scraper')).toBe(false);
     expect(valid.includes('')).toBe(false);
   });

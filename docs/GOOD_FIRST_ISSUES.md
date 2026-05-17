@@ -19,24 +19,7 @@ See [CONTRIBUTING.md](../CONTRIBUTING.md) for setup instructions.
 
 ## Available Issues
 
-### 1. Add Ollama Provider
-
-**Title:** Add Ollama provider for local LLM generation
-**Labels:** `good first issue`, `provider`, `enhancement`
-**Difficulty:** Low (~80 lines of new TypeScript)
-
-Add support for running devdocs-forge-agent with Ollama (Llama 3, Mistral, Phi) entirely locally — no API key, no internet connection needed.
-
-Key files:
-- Create `src/providers/ollama.provider.ts`
-- Update `src/providers/provider-registry.ts`
-- Update `docs/PROVIDERS.md`
-
-Full issue: [.github/ISSUE_TEMPLATES_READY/01-add-ollama-provider.md](../.github/ISSUE_TEMPLATES_READY/01-add-ollama-provider.md)
-
----
-
-### 2. Add OpenRouter Provider
+### 1. Add OpenRouter Provider
 
 **Title:** Add OpenRouter provider support
 **Labels:** `good first issue`, `provider`, `enhancement`
@@ -53,7 +36,7 @@ Full issue: [.github/ISSUE_TEMPLATES_READY/02-add-openrouter-provider.md](../.gi
 
 ---
 
-### 3. Add Mermaid Diagram Generation Mode
+### 2. Add Mermaid Diagram Generation Mode
 
 **Title:** Add Mermaid diagram generation mode
 **Labels:** `good first issue`, `mode`, `documentation`
@@ -69,7 +52,7 @@ Full issue: [.github/ISSUE_TEMPLATES_READY/03-add-mermaid-diagram-mode.md](../.g
 
 ---
 
-### 4. Improve Docusaurus Frontmatter Customization
+### 3. Improve Docusaurus Frontmatter Customization
 
 **Title:** Improve Docusaurus frontmatter customization
 **Labels:** `good first issue`, `docusaurus`, `documentation`
@@ -85,7 +68,7 @@ Full issue: [.github/ISSUE_TEMPLATES_READY/04-improve-docusaurus-frontmatter.md]
 
 ---
 
-### 5. Build Minimal Local Web Preview
+### 4. Build Minimal Local Web Preview
 
 **Title:** Build minimal local web preview for generated docs
 **Labels:** `good first issue`, `frontend`, `enhancement`
@@ -101,7 +84,7 @@ Full issue: [.github/ISSUE_TEMPLATES_READY/05-build-minimal-web-preview.md](../.
 
 ---
 
-### 6. GitBook Export Polish
+### 5. GitBook Export Polish
 
 **Title:** Polish GitBook output mode formatting
 **Labels:** `good first issue`, `mode`, `documentation`
@@ -121,7 +104,7 @@ Acceptance criteria:
 
 ---
 
-### 7. Docusaurus Sidebar Helper
+### 6. Docusaurus Sidebar Helper
 
 **Title:** Add Docusaurus sidebar.js snippet generator
 **Labels:** `good first issue`, `docusaurus`, `enhancement`
@@ -141,7 +124,7 @@ Acceptance criteria:
 
 ---
 
-### 8. Transcript Chunking for Long Videos
+### 7. Transcript Chunking for Long Videos
 
 **Title:** Add transcript chunking for long transcripts
 **Labels:** `good first issue`, `pipeline`, `enhancement`
@@ -162,7 +145,7 @@ Acceptance criteria:
 
 ---
 
-### 9. Docs Quality Score
+### 8. Docs Quality Score
 
 **Title:** Add documentation quality score to verify output
 **Labels:** `good first issue`, `pipeline`, `enhancement`
@@ -188,11 +171,6 @@ Acceptance criteria:
 If you are the maintainer, use GitHub CLI to create these issues:
 
 ```bash
-gh issue create \
-  --title "Add Ollama provider for local LLM generation" \
-  --body-file ".github/ISSUE_TEMPLATES_READY/01-add-ollama-provider.md" \
-  --label "good first issue,provider,enhancement"
-
 gh issue create \
   --title "Add OpenRouter provider support" \
   --body-file ".github/ISSUE_TEMPLATES_READY/02-add-openrouter-provider.md" \

@@ -42,6 +42,14 @@ const PROVIDERS: ProviderInfo[] = [
     defaultModel: 'gemini-2.0-flash',
     note: 'https://aistudio.google.com/',
   },
+  {
+    name: 'ollama',
+    label: 'Ollama (local)',
+    envKey: '(none required)',
+    modelEnv: 'OLLAMA_MODEL',
+    defaultModel: 'llama3',
+    note: 'Local HTTP API at OLLAMA_BASE_URL, default http://localhost:11434',
+  },
 ];
 
 export async function providersCommand(): Promise<void> {

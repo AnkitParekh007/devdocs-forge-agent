@@ -7,7 +7,7 @@ flowchart TD
     A["Transcript Input\n(--file input/tutorial.md)"] --> B["Safety / Intake Guard\n(URL validate · tech classify · transcript check)"]
     B --> C["Mode Selector\n(--type docusaurus|blog|faq|...)"]
     C --> D["Prompt Builder\n(_shared.md + _profile.md + mode.md + config)"]
-    D --> E["Provider Adapter\nmock | OpenAI | Anthropic | Gemini"]
+    D --> E["Provider Adapter\nmock | OpenAI | Anthropic | Gemini | Ollama"]
     E --> F["Markdown Generator\n(index.md · docs/{slug}.md)"]
     F --> G["Review Checklist\n(review-checklist.md · metadata.json · source-summary.md)"]
     G --> H["Docs Site\n(Docusaurus · GitBook · GitHub · Blog)"]
@@ -26,7 +26,7 @@ devdocs-forge-agent/
   CLI Layer          ← commander + commands
   Config Layer       ← YAML + Zod schema
   Pipeline Layer     ← parse → prompt → generate → write
-  Provider Layer     ← mock / openai / anthropic / gemini
+  Provider Layer     ← mock / openai / anthropic / gemini / ollama
   Template Layer     ← output structure + frontmatter
   Utility Layer      ← logger, errors, fs-utils
 ```

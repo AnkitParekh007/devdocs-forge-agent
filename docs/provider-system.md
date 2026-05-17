@@ -31,6 +31,7 @@ The pipeline only depends on this interface. It never imports a specific provide
 | `openai` | `DEVDOCS_PROVIDER=openai` | `gpt-4.1-mini` | `OPENAI_API_KEY` |
 | `anthropic` | `DEVDOCS_PROVIDER=anthropic` | `claude-3-5-sonnet-latest` | `ANTHROPIC_API_KEY` |
 | `gemini` | `DEVDOCS_PROVIDER=gemini` | `gemini-2.0-flash` | `GEMINI_API_KEY` |
+| `ollama` | `DEVDOCS_PROVIDER=ollama` | `llama3` | No |
 
 ### Mock Provider
 
@@ -44,7 +45,7 @@ The `npm run demo` command uses mock mode by default.
 
 ### Real Providers
 
-OpenAI, Anthropic, and Gemini providers use native Node.js `fetch` (Node 18+). No SDK packages are installed — this keeps the install size small and makes each provider easy to audit in a single file.
+OpenAI, Anthropic, Gemini, and Ollama providers use native Node.js `fetch` (Node 18+). No SDK packages are installed — this keeps the install size small and makes each provider easy to audit in a single file.
 
 Model override via env var:
 
@@ -52,6 +53,7 @@ Model override via env var:
 OPENAI_MODEL=gpt-4o
 ANTHROPIC_MODEL=claude-opus-4
 GEMINI_MODEL=gemini-2.0-pro
+OLLAMA_MODEL=llama3
 ```
 
 ## Provider Registry
@@ -76,7 +78,6 @@ See [AGENTS.md](../AGENTS.md) for the full step-by-step guide.
 
 ### Good First Issues for New Providers
 
-- **Ollama** ([issue #1](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/1)) — local LLMs via `http://localhost:11434`
 - **OpenRouter** ([issue #2](https://github.com/AnkitParekh007/devdocs-forge-agent/issues/2)) — access to 200+ models via a single API key
 
 ## Config Resolution Order

@@ -12,7 +12,7 @@ This file links to the canonical roadmap and provides quick contribution guidanc
 
 ## Current Priority Items for Contributors
 
-1. **Ollama provider** — enables offline/private use with local LLMs
+1. **OpenRouter provider** — adds a unified API for many hosted models
 2. **Transcript chunking** — handles transcripts longer than 50k tokens
 3. **GitHub PR generator** — auto-creates PRs for doc updates
 4. **VS Code extension** — right-click transcript → generate docs
